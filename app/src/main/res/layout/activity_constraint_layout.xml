@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConstraintLayoutActivity">
+
+    <View
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/vImage1"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:background="#123abc" />
+
+    <View
+        app:layout_constraintStart_toEndOf="@id/vImage1"
+        app:layout_constraintTop_toTopOf="@id/vImage1"
+        android:id="@+id/vImage2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#abc213" />
+
+    <View
+        app:layout_constraintTop_toBottomOf="@id/vImage2"
+        app:layout_constraintStart_toStartOf="@id/vImage2"
+        android:id="@+id/vImage3"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="#cda123" />
+
+    <View
+        app:layout_constraintEnd_toStartOf="@id/vImage5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vImage3"
+        android:id="@+id/vImage4"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="#412123" />
+
+    <View
+        app:layout_constraintStart_toEndOf="@id/vImage4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/vImage4"
+        android:id="@+id/vImage5"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="#712123" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
