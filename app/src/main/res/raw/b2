@@ -1,0 +1,70 @@
+1. Nguyên tắc làm việc với git
+- Code xong 1 cái j đó -> commit (đặt tên bằng TA) -> push code
+- Đặt tên branch bằng TA (hoặc TV không dấu)
+- Đặt tên branch:
++ Ví dụ: lapvt/buoi1
++ Bài tập về nhà: lapvt/btvn_buoi1
+2. Gradle
+- Có 2 gradle (app và project)
+- Dùng để thêm thư viện, ...
+- Version code: mỗi lần đẩy lên store thì version code tăng lên 1 đơn vị.
+- Bình thường sẽ dùng chế độ debug, còn khi cần đẩy lên store sẽ chuyển sang release
+3. Cấu trúc project
+- Android Manifest: khai báo quyền: vị trí, bộ nhớ, service, activity, ...
+- Drawable: Ảnh, vector, ...
+- Layout: để các giao diện của các màn hình, item, view
+- Mipmap: lưu trữ ảnh liên quan đến app, icon
+- Raw: lưu trữ các file cần thiết cho việc code, ví dụ như file nhạc chuông...
+- Font: Lưu trữ các font chữ trong ứng dụng của chúng ta (tải font trên mạng)
+- Values: config các string, color, dimen, themes, attr (thuộc tính), ...
+4. Lỗi build ứng dụng
+- C1: File -> Invalidate Caches -> Invalidate and Restart
+- C2: Build -> Clean Project
+5. Lỗi liên quan đến git
+- Cài Github Desktop trong trường hợp gặp lỗi liên quan đến Git
+hoặc cài Source Tree để sửa lỗi liên quan đến Git
+6. Debug
+- Để tìm lỗi
+- Để xem trình tự chạy của các câu lệnh
+7. Log
+- Log.d("key", value)
+- Log.e("key", value): cần in ra lỗi (hoặc "thích")
+8. Các thành phần cơ bản
+- Activity
+- Service
+- ContentProvider
+- BroadcastReceiver
+- Intent
+9. Các thành phần giao diện
+- ViewGroup: là cha chứa các view con: FrameLayout, LinearLayout, ConstraintLayout, ...
+- View: TextView (hiển thị text), Button, View, EditText (Nhập text), ImageView, ...
+10. FrameLayout
+- Hiển thị các view chồng nhau
+11. LinearLayout
+- Xếp các view theo chiều dọc hoặc chiều ngang
+- android:orientation="vertical": Xếp theo chiều dọc
+- android:orientation="horizontal": Xếp theo chiều ngang
+- android:layout_weight="1": Định nghĩa tỉ lệ giữa các view con
+12. RelativeLayout
+- Trong những trường hợp giao diện không quá phức tạp
+--> Dùng RelativeLayout hiệu quả
+- Phải gắn ID cho tất cả view bên trong
+- layout_below: Nằm bên dưới
+- layout_above: Nằm bên trên
+- layout_toRightOf = layout_toEndOf (ưu tiên): nằm bên phải
+- layout_toLeftOf = layout_toStartOf (ưu tiên): nằm bên trái
+- layout_alignParentEnd: bên phải view cha
+- layout_alignParentStart: bên trái view cha
+- layout_alignParentTop: bên trên view cha
+- layout_alignParentBottom: bên dưới view cha
+- layout_alignTop: bên trên của 2 view bằng nhau
+- layout_alignStart: bên trái 2 view bằng nhau
+- layout_alignEnd: bên phải 2 view bằng nhau
+- layout_alignBottom: bên dưới 2 view bằng nhau
+13. ConstraintLayout
+- Sử dụng khi cần vẽ nhiều view trong cùng 1 layout
+- layout_constraintTop_toTopOf: bên trên của view so với bên trên của view khác
+                                (hoặc so với view cha)
+- layout_constraintEnd_toEndOf: bên phải của view so với bên phải của view khác
+- layout_constraintStart_toStartOf: bên trái của view so với bên trái của view khác
+- layout_constraintBottom_toBottomOf: bên dưới của view so với bên dưới của view khác

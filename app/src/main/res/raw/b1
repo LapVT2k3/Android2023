@@ -1,0 +1,15 @@
+1. Có 2 chế độ hiển thị là Android và Project
+- Chế độ Android: hiển thị những file, thư mục cần thiết để code
+- Chế độ Project: hiển thị tất cả
+2. AndroidManifest: chứa setting các màn hình, service, các quyền
+   drawable: thư mục chứa các ảnh, vector
+   layout: chứa file xml của các giao diện (màn hình, view, dialog)
+     - layout cho màn hình dọc và layout cho màn hình ngang
+   values:
+     - color: chứa các mã màu
+     - strings: lưu giữ các string cho các đa ngôn ngữ, tiện lợi
+                cho maintain và test
+     - dimen: lưu giữ các kích thước
+3. LinearLayout: vertical (xếp theo dàng dọc), horizontal (xếp theo hàng ngang)
+TextView: Chỉ hiển thị text
+Button: Sự kiện click
