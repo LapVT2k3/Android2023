@@ -4,8 +4,95 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".LinearLayoutActivity1">
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="156dp">
 
+        <View
+            android:layout_weight="1"
+            android:background="#C4C4C4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+        <View
+            android:layout_weight="1"
+            android:background="#813434"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="165dp">
+
+        <View
+            android:layout_weight="1"
+            android:background="#54C5B0"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+        <View
+            android:layout_weight="1"
+            android:background="#260D0D"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+        <View
+            android:layout_weight="1"
+            android:background="#EF7F7F"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="165dp">
+
+        <View
+            android:background="#516561"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="165dp">
+
+        <View
+            android:layout_weight="1"
+            android:background="#9DC8C0"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <View
+                android:background="#531F1F"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+
+            <View
+                android:background="#C4C4C4"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
