@@ -81,7 +81,7 @@
         android:id="@id/vImage10"
         android:layout_width="97dp"
         android:layout_height="164dp"
-        android:layout_below="@id/vImage8"
+        android:layout_below="@id/vImage7"
         android:layout_toEndOf="@id/vImage7"
         android:background="#256275" />
 
