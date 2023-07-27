@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ConstraintLayoutActivity2">
-    
+
     <View
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -64,10 +64,11 @@
 
     <View
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vImage7"
+        app:layout_constraintBottom_toBottomOf="@id/vImage7"
         android:background="#4DC868"
         android:id="@+id/vImage8"
-        android:layout_width="45dp"
+        android:layout_width="0dp"
         android:layout_height="140dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
