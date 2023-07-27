@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RelativeLayoutActivity3">
+
+    <View
+        android:id="@+id/vImage1"
+        android:background="#C4C4C4"
+        android:layout_width="187dp"
+        android:layout_height="156dp" />
+
+    <View
+        android:layout_toEndOf="@id/vImage1"
+        android:id="@+id/vImage2"
+        android:background="#813434"
+        android:layout_width="188dp"
+        android:layout_height="156dp" />
+
+    <View
+        android:layout_marginStart="128dp"
+        android:layout_below="@id/vImage1"
+        android:id="@+id/vImage3"
+        android:background="#260D0D"
+        android:layout_width="96dp"
+        android:layout_height="165dp" />
+
+    <View
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/vImage3"
+        android:id="@+id/vImage4"
+        android:background="#9DC8C0"
+        android:layout_width="130dp"
+        android:layout_height="165dp" />
+
+    <View
+        android:layout_toEndOf="@id/vImage4"
+        android:layout_alignTop="@id/vImage4"
+        android:id="@+id/vImage5"
+        android:background="#531F1F"
+        android:layout_width="247dp"
+        android:layout_height="83dp" />
+
+    <View
+        android:layout_below="@id/vImage4"
+        android:layout_toEndOf="@id/vImage4"
+        android:id="@+id/vImage6"
+        android:background="#C4C4C4"
+        android:layout_width="245dp"
+        android:layout_height="241dp" />
+
+
+
+</RelativeLayout>
