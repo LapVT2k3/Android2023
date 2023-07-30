@@ -8,4 +8,13 @@
 + number: nhập số
 + numberPassword: mật khẩu dạng số
 + textPassword: mật khẩu dạng text
-+ textCapWords: nhập tất cả các giá trị dạng in hoa
++ textCapWords: nhập giá trị đầu tiên là in hoa
+3. TextView
+- Hiển thị text cho người dùng
+- font: set font (không dùng mặc định là font của hệ thống)
+- textSize: set cỡ chữ (không dùng mặc định là 14sp)
+- textColor: màu chữ
+4. ImageView
+- Hiển thị hình ảnh (png, jpg, webp, ảnh vector, ...)
+- adjustViewBounds: sử dụng khi fix cứng chiều cao và muốn cho ảnh hiển thị đúng tỉ lệ chiều dài
+                    và chiều cao

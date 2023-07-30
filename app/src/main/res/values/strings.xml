@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Android2023</string>
+    <string name="hint_age">Nhập tuổi</string>
+    <string name="hint_username">Nhập tên của bạn</string>
 </resources>
