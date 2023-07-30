@@ -55,4 +55,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+        
+        <RadioButton
+            android:text="Nam"
+            android:textSize="25sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:text="Nữ"
+            android:textSize="25sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
+
+
+
 </LinearLayout>
