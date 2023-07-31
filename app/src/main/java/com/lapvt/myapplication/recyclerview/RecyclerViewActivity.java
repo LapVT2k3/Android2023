@@ -52,6 +52,13 @@ public class RecyclerViewActivity extends AppCompatActivity {
         studentList.add(new Student("Tùng", 19, "B21DCCN146", "Thái Bình"));
         studentList.add(new Student("Long", 18, "B21DCCN787", "Thái Bình"));
         studentList.add(new Student("Khánh", 22, "B21DCCN987", "Thái Bình"));
+        studentList.add(new Student("Lập", 21, "B21DCCN479", "Thái Bình"));
+        studentList.add(new Student("Sơn", 21, "B21DCCN110", "Thái Bình"));
+        studentList.add(new Student("An", 20, "B21DCCN002", "Thái Bình"));
+        studentList.add(new Student("Đạt", 22, "B21DCCN228", "Thái Bình"));
+        studentList.add(new Student("Tùng", 19, "B21DCCN146", "Thái Bình"));
+        studentList.add(new Student("Long", 18, "B21DCCN787", "Thái Bình"));
+        studentList.add(new Student("Khánh", 22, "B21DCCN987", "Thái Bình"));
         return studentList;
     }
 }
