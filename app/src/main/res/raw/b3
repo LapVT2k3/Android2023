@@ -26,3 +26,8 @@ sẽ sử dụng lại cái view 1 đẩy data thứ 11 vào view 1
 + ViewHolder (1 item chung)
 + Adapter (quản lý data để đẩy vào các item view)
 - Muốn bắt sự kiện bấm cho recyclerView ta sử dụng 1 interface
+- Quy trình làm việc với recyclerView
++ Dựng item view bằng xml
++ Dựng model (Ví dụ như class Student)
++ Dựng Adapter và ViewHolder
++ Đẩy data vào adapter
