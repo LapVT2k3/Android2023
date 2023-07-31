@@ -18,3 +18,11 @@
 - Hiển thị hình ảnh (png, jpg, webp, ảnh vector, ...)
 - adjustViewBounds: sử dụng khi fix cứng chiều cao và muốn cho ảnh hiển thị đúng tỉ lệ chiều dài
                     và chiều cao
+5. RecyclerView
+- Tái chế view
+Ví dụ: Có 1000 item thì recyclerView chỉ sinh ra 10 view, khi kéo xuống dưới view 11 thì RecyclerView
+sẽ sử dụng lại cái view 1 đẩy data thứ 11 vào view 1
+- Để sử dụng được RecyclerView cần có:
++ ViewHolder (1 item chung)
++ Adapter (quản lý data để đẩy vào các item view)
+- Muốn bắt sự kiện bấm cho recyclerView ta sử dụng 1 interface
