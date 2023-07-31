@@ -76,13 +76,13 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/tvError"
+        android:id="@+id/tvNotification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/roboto_regular"
-        tools:text="@string/error"
+        tools:text="@string/Notification"
         android:textColor="#F40303"
         android:textSize="18sp" />
 

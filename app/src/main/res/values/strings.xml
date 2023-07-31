@@ -3,7 +3,7 @@
     <string name="hint_age">Nhập tuổi</string>
     <string name="hint_username">Nhập tên của bạn</string>
     <string name="require">Yêu cầu:\nTên tài khoản tối thiểu 6 ký tự và không có dấu cách.\nMật khẩu tối thiểu là 8 ký tự và phải trùng nhau.\nNếu không đúng điều kiện sẽ hiển thị lên TextView và background của edittext sẽ đổi sang màu đỏ.</string>
-    <string name="error">Lỗi</string>
+    <string name="Notification">Thông báo</string>
     <string name="tt">Tiếp tục</string>
     <string name="import_pass_again">Nhập lại mật khẩu</string>
     <string name="import_pass">Nhập mật khẩu</string>
