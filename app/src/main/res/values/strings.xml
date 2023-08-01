@@ -2,7 +2,6 @@
     <string name="app_name">Android2023</string>
     <string name="hint_age">Nhập tuổi</string>
     <string name="hint_username">Nhập tên của bạn</string>
-    <string name="require">Yêu cầu:\nTên tài khoản tối thiểu 6 ký tự và không có dấu cách.\nMật khẩu tối thiểu là 8 ký tự và phải trùng nhau.\nNếu không đúng điều kiện sẽ hiển thị lên TextView và background của edittext sẽ đổi sang màu đỏ.</string>
     <string name="Notification">Thông báo</string>
     <string name="tt">Tiếp tục</string>
     <string name="import_pass_again">Nhập lại mật khẩu</string>
@@ -10,4 +9,9 @@
     <string name="import_account">Nhập tên tài khoản</string>
     <string name="sign_up">Đăng ký tài khoản</string>
     <string name="back"><![CDATA[<]]></string>
+    <string name="importInfo">Nhập thông tin cá nhân</string>
+    <string name="import_phone_number">Nhập số điện thoại</string>
+    <string name="import_email">Nhập email</string>
+    <string name="import_full_name">Nhập tên đầy đủ</string>
+    <string name="import_agency_name">Nhập tên cơ quan</string>
 </resources>

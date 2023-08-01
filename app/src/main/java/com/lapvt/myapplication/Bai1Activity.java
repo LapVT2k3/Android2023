@@ -2,6 +2,7 @@ package com.lapvt.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
@@ -117,6 +118,8 @@ public class Bai1Activity extends AppCompatActivity {
                 tvNotification.setText(notification);
                 Toast.makeText(Bai1Activity.this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
 
+                Intent intent = new Intent(this, Bai2Activity.class);
+                startActivity(intent);
             } else {
                 notification += "Vui lòng nhập lại!";
                 tvNotification.setText(notification);
