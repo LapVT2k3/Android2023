@@ -14,4 +14,6 @@
     <string name="import_email">Nhập email</string>
     <string name="import_full_name">Nhập tên đầy đủ</string>
     <string name="import_agency_name">Nhập tên cơ quan</string>
+    <string name="import_number">Nhập số</string>
+    <string name="answer">Kết quả</string>
 </resources>

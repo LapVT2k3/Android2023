@@ -1,9 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Bai3Activity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/edtImportNumber1"
+        android:layout_width="380dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:background="#F4F6FA"
+        android:fontFamily="@font/roboto_regular"
+        android:hint="@string/import_number"
+        android:inputType="number"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/edtImportNumber2"
+        android:layout_width="380dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
+        android:background="#F4F6FA"
+        android:fontFamily="@font/roboto_regular"
+        android:hint="@string/import_number"
+        android:inputType="number"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvAnswer"
+        android:layout_width="380dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
+        android:background="#F4F6FA"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center|start"
+        android:hint="@string/answer"
+        android:textSize="20sp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="380dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/btnPlus"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="#1F9FFC"
+            android:text="+"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@id/btnSubtract"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnSubtract"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="#1F9FFC"
+            android:text="-"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@id/btnMultiply"
+            app:layout_constraintStart_toEndOf="@id/btnPlus" />
+
+        <Button
+            android:id="@+id/btnMultiply"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="#1F9FFC"
+            android:text="*"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@id/btnDivide"
+            app:layout_constraintStart_toEndOf="@id/btnSubtract" />
+
+        <Button
+            android:id="@+id/btnDivide"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="#1F9FFC"
+            android:text="/"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnMultiply" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
