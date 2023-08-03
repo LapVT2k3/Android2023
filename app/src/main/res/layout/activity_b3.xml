@@ -49,7 +49,7 @@
         android:adjustViewBounds="true"
         android:layout_width="wrap_content"
         android:layout_height="300dp" />
-    
+
     <CheckBox
         android:id="@+id/cbCheck"
         android:layout_width="wrap_content"

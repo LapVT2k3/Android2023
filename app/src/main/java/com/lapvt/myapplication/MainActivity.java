@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.Button;
 
 import com.lapvt.myapplication.recyclerview.RecyclerViewActivity;
+import com.lapvt.myapplication.recyclerviewb1.RecyclerViewB1Activity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         btnClickMe = findViewById(R.id.btnClickMe);
 
         btnClickMe.setOnClickListener(view -> {
-            Intent intent = new Intent(this, RecyclerViewActivity.class);
+            Intent intent = new Intent(this, RecyclerViewB1Activity.class);
             startActivity(intent);
         });
     }
