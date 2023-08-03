@@ -1,16 +1,28 @@
 package com.lapvt.myapplication.recyclerviewb1;
 
+import android.graphics.Bitmap;
+
 public class Group {
+    private Bitmap bitmap;
     private String name;
     private double numOfFans;
     private int numOfLatestPosts;
     private String status;
 
-    public Group(String name, double numOfFans, int numOfLatestPosts, String status) {
+    public Group(Bitmap bitmap, String name, double numOfFans, int numOfLatestPosts, String status) {
+        this.bitmap = bitmap;
         this.name = name;
         this.numOfFans = numOfFans;
         this.numOfLatestPosts = numOfLatestPosts;
         this.status = status;
+    }
+
+    public Bitmap getBitmap() {
+        return bitmap;
+    }
+
+    public void setBitmap(Bitmap bitmap) {
+        this.bitmap = bitmap;
     }
 
     public String getName() {

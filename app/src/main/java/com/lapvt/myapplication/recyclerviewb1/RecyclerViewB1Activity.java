@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -55,14 +57,14 @@ public class RecyclerViewB1Activity extends AppCompatActivity {
 
     private List<Group> creatGroupList() {
         List<Group> listGroup = new ArrayList<>();
-        listGroup.add(new Group("Mua bán có tâm", 8, 10, "NHÓM ĐÓNG"));
-        listGroup.add(new Group("Ăn để lăn", 8, 10, "NHÓM KÍN"));
-        listGroup.add(new Group("Chia sẻ kiến thức tài liệu Montessori", 1.7,7, "NHÓM MỞ"));
-        listGroup.add(new Group("Thực đơn Eat-Clean giảm cân khỏe đẹp", 11, 20, "NHÓM MỞ"));
-        listGroup.add(new Group("Easy Kento for busy People", 8, 10, "NHÓM KÍN"));
-        listGroup.add(new Group("OFFB", 8, 10, "NHÓM MỞ"));
-        listGroup.add(new Group("Thực đơn Eat-Clean giảm cân khỏe đẹp", 11, 20, "NHÓM MỞ"));
-        listGroup.add(new Group("Easy Kento for busy People", 8, 10, "NHÓM KÍN"));
+        listGroup.add(new Group(BitmapFactory.decodeResource(getResources(), R.drawable.ic_mbct), "Mua bán có tâm", 8, 10, "NHÓM ĐÓNG"));
+        listGroup.add(new Group(BitmapFactory.decodeResource(getResources(), R.drawable.ic_adl), "Ăn để lăn", 8, 10, "NHÓM KÍN"));
+        listGroup.add(new Group(BitmapFactory.decodeResource(getResources(), R.drawable.ic_cskt), "Chia sẻ kiến thức tài liệu Montessori", 1.7,7, "NHÓM MỞ"));
+        listGroup.add(new Group(BitmapFactory.decodeResource(getResources(), R.drawable.ic_td), "Thực đơn Eat-Clean giảm cân khỏe đẹp", 11, 20, "NHÓM MỞ"));
+        listGroup.add(new Group(BitmapFactory.decodeResource(getResources(), R.drawable.ic_food), "Easy Kento for busy People", 8, 10, "NHÓM KÍN"));
+        listGroup.add(new Group(BitmapFactory.decodeResource(getResources(), R.drawable.ic_offb), "OFFB", 8, 10, "NHÓM MỞ"));
+        listGroup.add(new Group(BitmapFactory.decodeResource(getResources(), R.drawable.ic_td), "Thực đơn Eat-Clean giảm cân khỏe đẹp", 11, 20, "NHÓM MỞ"));
+        listGroup.add(new Group(BitmapFactory.decodeResource(getResources(), R.drawable.ic_food), "Easy Kento for busy People", 8, 10, "NHÓM KÍN"));
         return listGroup;
     }
 }

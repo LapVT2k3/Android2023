@@ -3,6 +3,7 @@ package com.lapvt.myapplication.recyclerviewb1;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -72,7 +73,7 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.GroupViewHol
     }
 
     protected class GroupViewHolder extends RecyclerView.ViewHolder {
-
+        private ImageView imvImage;
         private TextView tvNameGroup;
         private TextView tvNumOfFans;
         private TextView tvNumOfLatestPosts;
@@ -80,6 +81,7 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.GroupViewHol
 
         public GroupViewHolder(@NonNull View itemView) {
             super(itemView);
+            imvImage = itemView.findViewById(R.id.imvImage);
             tvNameGroup = itemView.findViewById(R.id.tvNameGroup);
             tvNumOfFans = itemView.findViewById(R.id.tvNumOfFans);
             tvNumOfLatestPosts = itemView.findViewById(R.id.tvNumOfLatestPosts);
@@ -87,6 +89,7 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.GroupViewHol
         }
 
         public void setData(Group group) {
+            imvImage.setImageBitmap(group.getBitmap());
             tvNameGroup.setText(group.getName());
             tvNumOfFans.setText(group.getNumOfFans() + "K Fan");
             tvNumOfLatestPosts.setText("+" + group.getNumOfLatestPosts() + " bài viết mới nhất");
