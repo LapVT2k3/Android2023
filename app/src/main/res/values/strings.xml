@@ -3,4 +3,10 @@
     <string name="hint_age">Nhập tuổi</string>
     <string name="hint_username">Nhập tên của bạn</string>
     <string name="back"><![CDATA[<]]></string>
+    <string name="search">Tìm kiếm</string>
+    <string name="info">Thông tin</string>
+    <string name="pdf_reader">PDF READER</string>
+    <string name="recent_book">Recent Book</string>
+    <string name="icon_pdf">icon_pdf</string>
+    <string name="add">Thêm</string>
 </resources>
