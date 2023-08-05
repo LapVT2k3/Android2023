@@ -9,4 +9,6 @@
     <string name="recent_book">Recent Book</string>
     <string name="icon_pdf">icon_pdf</string>
     <string name="add">Thêm</string>
+    <string name="add_signal">+</string>
+    <string name="folder">Folder Manager</string>
 </resources>
