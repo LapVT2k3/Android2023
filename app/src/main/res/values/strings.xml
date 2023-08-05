@@ -11,4 +11,8 @@
     <string name="add">Thêm</string>
     <string name="add_signal">+</string>
     <string name="folder">Folder Manager</string>
+    <string name="icon_folder">icon_folder</string>
+    <string name="example_text">Video</string>
+    <string name="icon_close">icon_close</string>
+    <string name="icon_note">icon_note</string>
 </resources>

@@ -73,6 +73,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
 
     interface OnItemClick {
         void clickNameBook(String nameBook);
+
         void clickItem();
     }
 }
