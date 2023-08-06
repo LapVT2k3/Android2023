@@ -1,6 +1,7 @@
 package com.lapvt.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -18,8 +19,10 @@ public class Bai1Activity extends AppCompatActivity {
     private EditText edtPassword;
     private EditText edtPasswordAgain;
     private TextView tvNotification;
-
     private int cntBack;
+    private String passInput;
+    private String passInputAgain;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +50,7 @@ public class Bai1Activity extends AppCompatActivity {
         edtAccount.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                edtAccount.setBackgroundColor(Color.parseColor("#F4F6FA"));
+
             }
 
             @Override
@@ -57,14 +60,19 @@ public class Bai1Activity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-
+                String name = editable.toString().trim();
+                if (name.length() < 6) {
+                    edtAccount.setError("Tên tài khoản tối thiểu 6 ký tự");
+                } else {
+                    edtAccount.setError(null);
+                }
             }
         });
 
         edtPassword.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                edtPassword.setBackgroundColor(Color.parseColor("#F4F6FA"));
+
             }
 
             @Override
@@ -74,14 +82,20 @@ public class Bai1Activity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-
+                String pass = editable.toString().trim();
+                if (pass.length() < 8) {
+                    edtPassword.setError("Mật khẩu tối thiểu 8 ký tự");
+                } else {
+                    edtPassword.setError(null);
+                }
+                passInput = editable.toString().trim();
             }
         });
 
         edtPasswordAgain.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                edtPasswordAgain.setBackgroundColor(Color.parseColor("#F4F6FA"));
+
             }
 
             @Override
@@ -91,40 +105,26 @@ public class Bai1Activity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
+                String passAgain = editable.toString().trim();
+                if (passAgain.length() < 8) {
+                    edtPassword.setError("Mật khẩu nhập lại tối thiểu 8 ký tự");
+                } else {
+                    edtPassword.setError(null);
+                }
 
+                passInputAgain = editable.toString().trim();
+                if (passInput.equals(passInputAgain)) {
+                    edtPassword.setBackground(ContextCompat.getDrawable(Bai1Activity.this, R.drawable.shape_edittext));
+                    tvNotification.setText("Mật khẩu hợp lệ");
+                } else {
+                    edtPassword.setBackground(ContextCompat.getDrawable(Bai1Activity.this, R.drawable.shape_edittext_error));
+                    tvNotification.setText("Mật khẩu không trùng khớp");
+                }
             }
         });
 
         btnContinue.setOnClickListener(view -> {
-            String account = edtAccount.getText().toString();
-            String password = edtPassword.getText().toString();
-            String password_again = edtPasswordAgain.getText().toString();
-            String notification = "";
-
-            if (account.length() < 6) {
-                edtAccount.setBackgroundColor(Color.parseColor("#FFEEEC"));
-                notification += "Tài khoản có ít hơn 6 ký tự.\n";
-            }
-            if (password.length() < 8) {
-                edtPassword.setBackgroundColor(Color.parseColor("#FFEEEC"));
-                edtPasswordAgain.setBackgroundColor(Color.parseColor("#FFEEEC"));
-                notification += "Mật khẩu có ít hơn 8 ký tự.\n";
-            } else if (!password.equals(password_again)) {
-                edtPasswordAgain.setBackgroundColor(Color.parseColor("#FFEEEC"));
-                notification += "Mật khẩu nhập lại không trùng với mật khẩu trước đó.\n";
-            }
-            if (notification.equals("")) {
-                notification = "Đăng ký thành công!";
-                tvNotification.setText(notification);
-                Toast.makeText(Bai1Activity.this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(this, Bai2Activity.class);
-                startActivity(intent);
-            } else {
-                notification += "Vui lòng nhập lại!";
-                tvNotification.setText(notification);
-            }
-
+            startActivity(new Intent(this, Bai2Activity.class));
         });
     }
 }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!--    thuộc tính set màu cho background-->
+    <solid android:color="#FFEEEC"/>
+    <!--    thuộc tính để bo góc-->
+    <corners android:radius="8dp"/>
+</shape>
