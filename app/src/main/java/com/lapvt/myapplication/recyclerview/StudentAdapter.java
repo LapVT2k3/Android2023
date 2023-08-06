@@ -74,7 +74,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         return studentList != null ? studentList.size() : 0;
     }
 
-    protected class StudentViewHolder extends RecyclerView.ViewHolder {
+    public class StudentViewHolder extends RecyclerView.ViewHolder {
 
         private TextView tvName;
         private TextView tvAge;
@@ -91,7 +91,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         }
     }
 
-    interface OnItemClick {
+    public interface OnItemClick {
         // Bấm vào tên
         void clickName(String name);
         // Bấm vào tuổi

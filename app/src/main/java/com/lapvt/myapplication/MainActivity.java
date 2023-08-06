@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.lapvt.myapplication.buoi4.RecyclerViewHorizontalActivity;
+import com.lapvt.myapplication.buoi4.RecyclerViewVerticalActivity;
 import com.lapvt.myapplication.recyclerview.RecyclerViewActivity;
 import com.lapvt.myapplication.recyclerviewb1.RecyclerViewB1Activity;
 import com.lapvt.myapplication.recyclerviewb2.RecyclerViewB2Activity;
@@ -28,7 +30,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         btnVertical.setOnClickListener(view -> {
-            Intent intent = new Intent(this, RecyclerViewB3Activity.class);
+            Intent intent = new Intent(this, RecyclerViewVerticalActivity.class);
+            startActivity(intent);
+        });
+
+        btnHorizontal.setOnClickListener(view -> {
+            Intent intent = new Intent(this, RecyclerViewHorizontalActivity.class);
             startActivity(intent);
         });
     }
