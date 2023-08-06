@@ -20,7 +20,7 @@
         android:text="Hiển thị theo chiều ngang" />
 
     <Button
-        android:id="@+id/btnrid"
+        android:id="@+id/btnGrid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hiển thị theo hình ô vuông" />

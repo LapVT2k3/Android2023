@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         btnGrid = findViewById(R.id.btnGrid);
 
 
-        btnV.setOnClickListener(view -> {
+        btnVertical.setOnClickListener(view -> {
             Intent intent = new Intent(this, RecyclerViewB3Activity.class);
             startActivity(intent);
         });
