@@ -7,18 +7,22 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tvNameBook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Xin chào, mình là Vũ Trung Lập"
-        android:textColor="@color/black"
-        android:textSize="40sp" />
-
     <Button
-        android:id="@+id/btnClickMe"
+        android:id="@+id/btnVertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Click me" />
+        android:text="Hiển thị theo chiều dọc" />
+
+    <Button
+        android:id="@+id/btnHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hiển thị theo chiều ngang" />
+
+    <Button
+        android:id="@+id/btnrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hiển thị theo hình ô vuông" />
 
 </LinearLayout>

@@ -13,16 +13,21 @@ import com.lapvt.myapplication.recyclerviewb3.RecyclerViewB3Activity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnClickMe;
+    private Button btnVertical;
+    private Button btnHorizontal;
+    private Button btnGrid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnClickMe = findViewById(R.id.btnClickMe);
+        btnVertical = findViewById(R.id.btnVertical);
+        btnHorizontal = findViewById(R.id.btnHorizontal);
+        btnGrid = findViewById(R.id.btnGrid);
 
-        btnClickMe.setOnClickListener(view -> {
+
+        btnV.setOnClickListener(view -> {
             Intent intent = new Intent(this, RecyclerViewB3Activity.class);
             startActivity(intent);
         });
