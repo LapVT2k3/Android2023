@@ -27,29 +27,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        btnVertical = findViewById(R.id.btnVertical);
-//        btnHorizontal = findViewById(R.id.btnHorizontal);
-//        btnGrid = findViewById(R.id.btnGrid);
-//        btnMerge = findViewById(R.id.btnMerge);
-//
-//        btnVertical.setOnClickListener(view -> {
-//            Intent intent = new Intent(this, RecyclerViewVerticalActivity.class);
-//            startActivity(intent);
-//        });
-//
-//        btnHorizontal.setOnClickListener(view -> {
-//            Intent intent = new Intent(this, RecyclerViewHorizontalActivity.class);
-//            startActivity(intent);
-//        });
-//
-//        btnGrid.setOnClickListener(view -> {
-//            Intent intent = new Intent(this, RecyclerViewGridActivity.class);
-//            startActivity(intent);
-//        });
-//
-//        btnMerge.setOnClickListener(view -> {
-//            Intent intent = new Intent(this, RecyclerViewMergeAdapterActivity.class);
-//            startActivity(intent);
-//        });
+        btnVertical = findViewById(R.id.btnVertical);
+        btnHorizontal = findViewById(R.id.btnHorizontal);
+        btnGrid = findViewById(R.id.btnGrid);
+        btnMerge = findViewById(R.id.btnMerge);
+
+        btnVertical.setOnClickListener(view -> {
+            Intent intent = new Intent(this, RecyclerViewVerticalActivity.class);
+            startActivity(intent);
+        });
+
+        btnHorizontal.setOnClickListener(view -> {
+            Intent intent = new Intent(this, RecyclerViewHorizontalActivity.class);
+            startActivity(intent);
+        });
+
+        btnGrid.setOnClickListener(view -> {
+            Intent intent = new Intent(this, RecyclerViewGridActivity.class);
+            startActivity(intent);
+        });
+
+        btnMerge.setOnClickListener(view -> {
+            Intent intent = new Intent(this, RecyclerViewMergeAdapterActivity.class);
+            startActivity(intent);
+        });
     }
 }
