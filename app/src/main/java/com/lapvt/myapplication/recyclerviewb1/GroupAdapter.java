@@ -1,5 +1,6 @@
 package com.lapvt.myapplication.recyclerviewb1;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -94,6 +95,13 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.GroupViewHol
             tvNumOfFans.setText(group.getNumOfFans() + "K Fan");
             tvNumOfLatestPosts.setText("+" + group.getNumOfLatestPosts() + " bài viết mới nhất");
             tvStatus.setText(group.getStatus());
+            if (group.getStatus().equals("NHÓM ĐÓNG")) {
+                tvStatus.setTextColor(Color.parseColor("#8E8E8E"));
+            } else if (group.getStatus().equals("NHÓM KÍN")) {
+                tvStatus.setTextColor(Color.parseColor("#FF9500"));
+            } else if (group.getStatus().equals("NHÓM MỞ")) {
+                tvStatus.setTextColor(Color.parseColor("#1F9FFC"));
+            }
         }
     }
 
