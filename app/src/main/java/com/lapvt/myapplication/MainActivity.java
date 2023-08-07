@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.lapvt.myapplication.buoi4.RecyclerViewGridActivity;
 import com.lapvt.myapplication.buoi4.RecyclerViewHorizontalActivity;
 import com.lapvt.myapplication.buoi4.RecyclerViewVerticalActivity;
 import com.lapvt.myapplication.recyclerview.RecyclerViewActivity;
@@ -36,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
 
         btnHorizontal.setOnClickListener(view -> {
             Intent intent = new Intent(this, RecyclerViewHorizontalActivity.class);
+            startActivity(intent);
+        });
+
+        btnGrid.setOnClickListener(view -> {
+            Intent intent = new Intent(this, RecyclerViewGridActivity.class);
             startActivity(intent);
         });
     }

@@ -1,6 +1,7 @@
 package com.lapvt.myapplication.buoi4;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,33 +15,34 @@ import com.lapvt.myapplication.recyclerview.StudentAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerViewHorizontalActivity extends AppCompatActivity {
+public class RecyclerViewGridActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_view_horizontal);
+        setContentView(R.layout.activity_recycler_view_grid);
 
         RecyclerView rcvData = findViewById(R.id.rcvData);
 
         // Khởi tạo adapter
         StudentAdapter adapter = new StudentAdapter(creatStudentList());
-        rcvData.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        // spanCount: Số cột
+        rcvData.setLayoutManager(new GridLayoutManager(this, 4));
         rcvData.setAdapter(adapter);
         adapter.setOnItemClick(new StudentAdapter.OnItemClick() {
             @Override
             public void clickName(String name) {
-                Toast.makeText(RecyclerViewHorizontalActivity.this, name, Toast.LENGTH_SHORT).show();
+                Toast.makeText(RecyclerViewGridActivity.this, name, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void clickAge(String age) {
-                Toast.makeText(RecyclerViewHorizontalActivity.this, age, Toast.LENGTH_SHORT).show();
+                Toast.makeText(RecyclerViewGridActivity.this, age, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void clickItem() {
-                Toast.makeText(RecyclerViewHorizontalActivity.this, "Đây là item", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RecyclerViewGridActivity.this, "Đây là item", Toast.LENGTH_SHORT).show();
             }
         });
     }
