@@ -1,0 +1,20 @@
+1. Khai báo biến trong Kotlin
+- Kiểu 1: Áp dụng cho những biến không thể gán giá trị
+(những biến không đổi, biến hằng)
+   val ten_bien : <Kiểu dữ liệu> = giá trị
+- Kiểu 2: Áp dụng những biến mà muốn gán giá trị, thay đổi
+   var ten_bien : <Kiểu dữ liệu> = giá trị mặc định
+  + Trong trường hợp không muốn gán giá trị mặc định
+   var ten_bien: <Kiểu dữ liệu>? = null
+  + Ngoài ra có thể khai báo biến var theo cách sau:
+   var ten_bien = giá trị mặc định
+   (tự hiểu kiểu dữ liệu của tên biến giống kiểu dữ liệu của giá trị mặc định)
+2. Khai báo hàm
+- Hàm không trả về giá trị
+    fun ten_ham() {
+
+    }
+- Hàm có trả về giá trị
+    fun ten_ham(): <Giá trị trả về> {
+
+    }
