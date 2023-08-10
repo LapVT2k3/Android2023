@@ -2,6 +2,7 @@ package com.lapvt.myapplication.buoi5
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.lapvt.myapplication.R
 
 class KotlinActivity : AppCompatActivity() {
@@ -20,10 +21,19 @@ class KotlinActivity : AppCompatActivity() {
         println(tinhTich(3, 5))
         println(tinhThuong(5))
 
-        val student = StudentKotlin()
+        val student = StudentKotlin(1.5)
         // Set dữ liệu
         student.name = "Vũ Trung Lập"
         student.age = 20
+        student.height = 1.6
+        // Set dữ liệu kiểu 2
+        val student2 = StudentKotlin(1.5).apply {
+            this.name = "Vũ Trung Lập"
+            this.age = 20
+        }
+
+        // Get dữ liệu
+        Toast.makeText(this, student.name + student.age, Toast.LENGTH_LONG).show();
     }
 
     private fun logExample(result: String, result2: String) {

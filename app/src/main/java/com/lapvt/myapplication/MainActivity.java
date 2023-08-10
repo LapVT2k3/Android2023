@@ -12,6 +12,7 @@ import com.lapvt.myapplication.buoi4.RecyclerViewHorizontalActivity;
 import com.lapvt.myapplication.buoi4.RecyclerViewMergeAdapterActivity;
 import com.lapvt.myapplication.buoi4.RecyclerViewVerticalActivity;
 import com.lapvt.myapplication.buoi5.KotlinActivity;
+import com.lapvt.myapplication.buoi5.StudentKotlin;
 import com.lapvt.myapplication.recyclerview.RecyclerViewActivity;
 import com.lapvt.myapplication.recyclerviewb1.RecyclerViewB1Activity;
 import com.lapvt.myapplication.recyclerviewb2.RecyclerViewB2Activity;
@@ -62,6 +63,10 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, KotlinActivity.class);
             startActivity(intent);
         });
+
+        StudentKotlin studentKotlin = new StudentKotlin(1.5, "Nam");
+        studentKotlin.setName("Vũ Trung Lập");
+        studentKotlin.setAge(20);
     }
 
     // Hàm không trả về giá trị (hàm void)
