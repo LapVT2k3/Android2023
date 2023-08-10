@@ -18,3 +18,7 @@
     fun ten_ham(): <Giá trị trả về> {
 
     }
+- Giá trị mặc định của parameter
+    fun ten_ham(parameter: <Kiểu dữ liệu> = giá trị mặc định) {
+
+    }

@@ -69,4 +69,8 @@ public class MainActivity extends AppCompatActivity {
         Log.d("hihiabc", "");
         Log.e("hihi", "");
     }
+
+    private int tinhTong(int a, int b) {
+        return a + b;
+    }
 }
