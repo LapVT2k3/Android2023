@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 
 import com.lapvt.myapplication.buoi4.RecyclerViewGridActivity;
@@ -12,13 +13,14 @@ import com.lapvt.myapplication.buoi4.RecyclerViewHorizontalActivity;
 import com.lapvt.myapplication.buoi4.RecyclerViewMergeAdapterActivity;
 import com.lapvt.myapplication.buoi4.RecyclerViewVerticalActivity;
 import com.lapvt.myapplication.buoi5.KotlinActivity;
+import com.lapvt.myapplication.buoi5.OnClick;
 import com.lapvt.myapplication.buoi5.StudentKotlin;
 import com.lapvt.myapplication.recyclerview.RecyclerViewActivity;
 import com.lapvt.myapplication.recyclerviewb1.RecyclerViewB1Activity;
 import com.lapvt.myapplication.recyclerviewb2.RecyclerViewB2Activity;
 import com.lapvt.myapplication.recyclerviewb3.RecyclerViewB3Activity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnClick, View.OnClickListener {
 
     private Button btnVertical;
     private Button btnHorizontal;
@@ -77,5 +79,20 @@ public class MainActivity extends AppCompatActivity {
 
     private int tinhTong(int a, int b) {
         return a + b;
+    }
+
+    @Override
+    public void clicked() {
+
+    }
+
+    @Override
+    public void onClick(View view) {
+
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
     }
 }

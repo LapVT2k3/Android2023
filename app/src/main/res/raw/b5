@@ -22,3 +22,12 @@
     fun ten_ham(parameter: <Kiểu dữ liệu> = giá trị mặc định) {
 
     }
+3. Kế thừa trong Kotlin
+- Cách viết kiểu kế thừa:
+    class A: B (Class A kế thừa từ Class B)
+  + Trong trường hợp Class B được viết bằng java thì class B phải để public hoặc protected
+  + Trong trường hợp Class B được viết bằng Kotlin thì phải là open class
+4. Các câu điều kiện
+- if else (tương tự java)
+- for
+- when (tương tự switch case)

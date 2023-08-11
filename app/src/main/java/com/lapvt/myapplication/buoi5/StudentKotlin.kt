@@ -1,6 +1,6 @@
 package com.lapvt.myapplication.buoi5
 
-class StudentKotlin constructor(var height: Double, gender: String = "Nam") {
+class StudentKotlin constructor(var height: Double, gender: String = "Nam"): StudentBase() {
 
     var name: String = ""
     var age: Int = 0
