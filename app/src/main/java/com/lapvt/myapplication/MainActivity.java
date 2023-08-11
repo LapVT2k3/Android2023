@@ -1,5 +1,6 @@
 package com.lapvt.myapplication;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,7 +15,9 @@ import com.lapvt.myapplication.buoi4.RecyclerViewMergeAdapterActivity;
 import com.lapvt.myapplication.buoi4.RecyclerViewVerticalActivity;
 import com.lapvt.myapplication.buoi5.KotlinActivity;
 import com.lapvt.myapplication.buoi5.OnClick;
+import com.lapvt.myapplication.buoi5.PTB2Activity;
 import com.lapvt.myapplication.buoi5.StudentKotlin;
+
 import com.lapvt.myapplication.recyclerview.RecyclerViewActivity;
 import com.lapvt.myapplication.recyclerviewb1.RecyclerViewB1Activity;
 import com.lapvt.myapplication.recyclerviewb2.RecyclerViewB2Activity;
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements OnClick, View.OnC
     private Button btnGrid;
     private Button btnMerge;
     private Button btnKotlin;
+    private Button btnPtb2Kotlin;
 
     private int count;
 
@@ -40,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements OnClick, View.OnC
         btnGrid = findViewById(R.id.btnGrid);
         btnMerge = findViewById(R.id.btnMerge);
         btnKotlin = findViewById(R.id.btnKotlin);
+        btnPtb2Kotlin = findViewById(R.id.btnPtb2Kotlin);
 
         btnVertical.setOnClickListener(view -> {
             Intent intent = new Intent(this, RecyclerViewVerticalActivity.class);
@@ -63,6 +68,11 @@ public class MainActivity extends AppCompatActivity implements OnClick, View.OnC
 
         btnKotlin.setOnClickListener(view -> {
             Intent intent = new Intent(this, KotlinActivity.class);
+            startActivity(intent);
+        });
+
+        btnPtb2Kotlin.setOnClickListener(view -> {
+            Intent intent = new Intent(this, PTB2Activity.class);
             startActivity(intent);
         });
 

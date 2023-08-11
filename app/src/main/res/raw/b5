@@ -31,3 +31,9 @@
 - if else (tương tự java)
 - for
 - when (tương tự switch case)
+5. Cách xử lý cộng chuỗi string
+- Để cộng 2 chuỗi "abc" + "def"
+Ví dụ: val a = "abc"
+       val b = "bcd"
+       val c = a + b
+       val d = "$a$b"

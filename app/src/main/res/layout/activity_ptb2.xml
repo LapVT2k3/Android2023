@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".buoi5.PTB2Activity">
+
+    <TextView
+        android:textSize="40sp"
+        android:layout_gravity="center"
+        android:text="Giải phương trình bậc 2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textSize="40sp"
+        android:layout_gravity="center"
+        android:text="ax^2 + bx + c = 0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edtA"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/edtB"
+            android:autofillHints=""
+            android:inputType="text"
+            android:textSize="20sp"
+            android:hint="Nhập a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/edtA"
+            app:layout_constraintEnd_toStartOf="@id/edtC"
+            android:id="@+id/edtB"
+            android:autofillHints=""
+            android:inputType="text"
+            android:textSize="20sp"
+            android:hint="Nhập b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/edtC"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/edtB"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:autofillHints=""
+            android:inputType="text"
+            android:textSize="20sp"
+            android:hint="Nhập c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnGPT"
+        android:textSize="16sp"
+        android:layout_marginTop="5dp"
+        android:text="Giải phương trình"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

@@ -37,4 +37,10 @@
         android:layout_height="wrap_content"
         android:text="Kotlin" />
 
+    <Button
+        android:id="@+id/btnPtb2Kotlin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Phương trình bậc 2 (Kotlin)" />
+
 </LinearLayout>

@@ -137,7 +137,7 @@ class KotlinActivity : AppCompatActivity(), OnClick, View.OnClickListener {
                 //todo
             }
         }
-        // Tương đương với if else như sau:
+        // Tương đương với cách dùng if else như sau:
         if (student.age == 1 && student.name == "a") {
             //todo
         } else if (student.age == 2) {
@@ -157,5 +157,20 @@ class KotlinActivity : AppCompatActivity(), OnClick, View.OnClickListener {
                 //todo
             }
         }
+    }
+
+    private fun xuLyChuoi() {
+        val a = "abc"
+        val b = "def"
+        val c = "$a$b" // => "abcdef"
+        val d = 100 * 10
+        val e = a + d // => "abc1000"
+        val f = "$a${100 * 10}${12-3} Tôi tên là: ${getTen()}" // => "abc10009 Tôi tên là: Lập"
+        var g = "xyz"
+
+    }
+
+    private fun getTen(): String {
+        return "Lập"
     }
 }
