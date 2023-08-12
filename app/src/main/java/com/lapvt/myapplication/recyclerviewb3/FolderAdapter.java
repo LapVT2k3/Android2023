@@ -1,8 +1,10 @@
 package com.lapvt.myapplication.recyclerviewb3;
 
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -16,6 +18,7 @@ import java.util.List;
 public class FolderAdapter extends RecyclerView.Adapter<FolderAdapter.FolderViewHolder> {
     private List<Folder> folderList = null;
     private OnItemClick onItemClick;
+    private int focusedItemPosition = RecyclerView.NO_POSITION;
 
     public FolderAdapter(List<Folder> folderList) {
         this.folderList = folderList;
@@ -33,6 +36,11 @@ public class FolderAdapter extends RecyclerView.Adapter<FolderAdapter.FolderView
         this.onItemClick = onItemClick;
     }
 
+    public void setFocusedItemPosition(int focusedItemPosition) {
+        this.focusedItemPosition = focusedItemPosition;
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public FolderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -46,18 +54,38 @@ public class FolderAdapter extends RecyclerView.Adapter<FolderAdapter.FolderView
 
         holder.tvFolderName.setOnClickListener(view -> {
             onItemClick.clickName(folderList.get(position).getNameFolder());
+            this.setFocusedItemPosition(position);
         });
 
+        if (position == focusedItemPosition) {
+            holder.edtFolderName.requestFocus();
+        } else {
+            holder.edtFolderName.clearFocus();
+        }
+
         holder.imbFix.setOnClickListener(view -> {
-            onItemClick.clickFix();
+            holder.edtFolderName.setText(folderList.get(position).getNameFolder());
+            holder.edtFolderName.setVisibility(View.VISIBLE);
+            holder.tvFolderName.setVisibility(View.GONE);
+            holder.edtFolderName.requestFocus();
+        });
+
+        holder.edtFolderName.setOnFocusChangeListener((view, b) -> {
+            if (!b) {
+                String newName = holder.edtFolderName.getText().toString();
+                holder.tvFolderName.setText(newName);
+                holder.edtFolderName.setVisibility(View.GONE);
+                holder.tvFolderName.setVisibility(View.VISIBLE);
+                folderList.get(position).setNameFolder(newName);
+            }
         });
 
         holder.imbDelete.setOnClickListener(view -> {
-            onItemClick.clickDelete();
+            onItemClick.clickDelete(position);
         });
 
         holder.itemView.setOnClickListener(view -> {
-            onItemClick.clickItem();
+            this.setFocusedItemPosition(position);
         });
     }
 
@@ -70,11 +98,13 @@ public class FolderAdapter extends RecyclerView.Adapter<FolderAdapter.FolderView
         private TextView tvFolderName;
         private ImageButton imbFix;
         private ImageButton imbDelete;
+        private EditText edtFolderName;
         public FolderViewHolder(@NonNull View itemView) {
             super(itemView);
             tvFolderName = itemView.findViewById(R.id.tvFolderName);
             imbFix = itemView.findViewById(R.id.imbFix);
             imbDelete = itemView.findViewById(R.id.imbDelete);
+            edtFolderName = itemView.findViewById(R.id.edtFolderName);
         }
 
         public void setData(Folder folder) {
@@ -84,8 +114,6 @@ public class FolderAdapter extends RecyclerView.Adapter<FolderAdapter.FolderView
 
     interface OnItemClick {
         void clickName(String folderName);
-        void clickFix();
-        void clickDelete();
-        void clickItem();
+        void clickDelete(int position);
     }
 }

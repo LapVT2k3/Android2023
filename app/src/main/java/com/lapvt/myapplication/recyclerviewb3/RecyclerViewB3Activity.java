@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +18,7 @@ import java.util.List;
 public class RecyclerViewB3Activity extends AppCompatActivity {
     private TextView tvAdd;
     private List<Folder> folderList;
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,18 +40,10 @@ public class RecyclerViewB3Activity extends AppCompatActivity {
             }
 
             @Override
-            public void clickFix() {
-
-            }
-
-            @Override
-            public void clickDelete() {
-
-            }
-
-            @Override
-            public void clickItem() {
-                Toast.makeText(RecyclerViewB3Activity.this, "Đây là item", Toast.LENGTH_SHORT).show();
+            public void clickDelete(int position) {
+                folderList.remove(position);
+                adapter.notifyItemRemoved(position);
+                adapter.notifyItemRangeChanged(position, folderList.size() - position);
             }
         });
 
