@@ -3,6 +3,7 @@ package com.lapvt.myapplication.recyclerviewb3;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -47,6 +48,14 @@ public class FolderAdapter extends RecyclerView.Adapter<FolderAdapter.FolderView
             onItemClick.clickName(folderList.get(position).getNameFolder());
         });
 
+        holder.imbFix.setOnClickListener(view -> {
+            onItemClick.clickFix();
+        });
+
+        holder.imbDelete.setOnClickListener(view -> {
+            onItemClick.clickDelete();
+        });
+
         holder.itemView.setOnClickListener(view -> {
             onItemClick.clickItem();
         });
@@ -59,10 +68,13 @@ public class FolderAdapter extends RecyclerView.Adapter<FolderAdapter.FolderView
 
     protected class FolderViewHolder extends RecyclerView.ViewHolder {
         private TextView tvFolderName;
-
+        private ImageButton imbFix;
+        private ImageButton imbDelete;
         public FolderViewHolder(@NonNull View itemView) {
             super(itemView);
             tvFolderName = itemView.findViewById(R.id.tvFolderName);
+            imbFix = itemView.findViewById(R.id.imbFix);
+            imbDelete = itemView.findViewById(R.id.imbDelete);
         }
 
         public void setData(Folder folder) {
@@ -72,7 +84,8 @@ public class FolderAdapter extends RecyclerView.Adapter<FolderAdapter.FolderView
 
     interface OnItemClick {
         void clickName(String folderName);
-
+        void clickFix();
+        void clickDelete();
         void clickItem();
     }
 }

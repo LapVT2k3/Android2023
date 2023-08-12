@@ -39,9 +39,11 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/tvAdd"
+            android:gravity="center"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="10dp"
             android:fontFamily="@font/roboto_regular"
             android:text="@string/add_signal"
             android:textSize="40sp"

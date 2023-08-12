@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lapvt.myapplication.R;
@@ -13,15 +14,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerViewB3Activity extends AppCompatActivity {
-
+    private TextView tvAdd;
+    private List<Folder> folderList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view_b3);
 
+        tvAdd = findViewById(R.id.tvAdd);
+        folderList = creatFolderList();
+
         RecyclerView rcvDataFolder = findViewById(R.id.rcvDataFolder);
 
-        FolderAdapter adapter = new FolderAdapter(creatFolderList());
+        FolderAdapter adapter = new FolderAdapter(folderList);
         rcvDataFolder.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rcvDataFolder.setAdapter(adapter);
 
@@ -32,8 +37,31 @@ public class RecyclerViewB3Activity extends AppCompatActivity {
             }
 
             @Override
+            public void clickFix() {
+
+            }
+
+            @Override
+            public void clickDelete() {
+
+            }
+
+            @Override
             public void clickItem() {
                 Toast.makeText(RecyclerViewB3Activity.this, "Đây là item", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        tvAdd.setOnClickListener(view -> {
+            int i = folderList.size();
+            if (!folderList.contains(new Folder("New Folder"))) {
+                folderList.add(i, new Folder("New Folder"));
+                adapter.notifyItemInserted(i);
+            } else {
+                int k = 1;
+                while (folderList.contains(new Folder("New Folder " + k))) k++;
+                folderList.add(i, new Folder("New Folder " + k));
+                adapter.notifyItemInserted(i);
             }
         });
     }
@@ -46,7 +74,7 @@ public class RecyclerViewB3Activity extends AppCompatActivity {
         folderList.add(new Folder("Books"));
         folderList.add(new Folder("Map"));
         folderList.add(new Folder("Authenticate Using Google..."));
-        folderList.add(new Folder("New Folder"));
+        folderList.add(new Folder("New Folder 3"));
         folderList.add(new Folder("New Folder 1"));
         return folderList;
     }
