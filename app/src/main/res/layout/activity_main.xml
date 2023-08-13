@@ -8,30 +8,6 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btnVertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hiển thị theo chiều dọc" />
-
-    <Button
-        android:id="@+id/btnHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hiển thị theo chiều ngang" />
-
-    <Button
-        android:id="@+id/btnGrid"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hiển thị theo hình ô vuông" />
-
-    <Button
-        android:id="@+id/btnMerge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="MergeAdapter" />
-
-    <Button
         android:id="@+id/btnKotlin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,5 +18,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Phương trình bậc 2 (Kotlin)" />
+
+    <Button
+        android:id="@+id/btnBtvn5_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buổi 5 - Bài 1" />
+
+    <Button
+        android:id="@+id/btnBtvn5_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buổi 5 - Bài 2" />
+
+    <Button
+        android:id="@+id/btnBtvn5_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buổi 5 - Bài 3" />
 
 </LinearLayout>

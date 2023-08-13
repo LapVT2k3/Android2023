@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.lapvt.myapplication.R
-import com.lapvt.myapplication.recyclerview.Student
 
 class KotlinActivity : AppCompatActivity(), OnClick, View.OnClickListener {
 
