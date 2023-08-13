@@ -8,41 +8,244 @@
 
     <TextView
         android:id="@+id/tvBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/back"
+        android:textSize="40sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="16dp"
-        android:textSize="40sp"
-        android:text="@string/back"
-        android:fontFamily="@font/roboto_regular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintBottom_toBottomOf="@id/vLine"/>
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/tvBack"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/tvBack"
         android:layout_marginStart="20dp"
         android:fontFamily="@font/roboto_regular"
         android:text="Cá nhân hóa"
-        android:textSize="22sp" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvBack"
+        app:layout_constraintStart_toEndOf="@id/tvBack"
+        app:layout_constraintTop_toTopOf="@id/tvBack" />
 
     <View
+        android:layout_marginTop="10dp"
         android:id="@+id/vLine"
-        android:background="#CCC9C9"
-        app:layout_constraintTop_toBottomOf="@id/tvBack"
         android:layout_width="match_parent"
-        android:layout_height="1dp"/>
-    
+        android:layout_height="1dp"
+        android:background="#888383"
+        app:layout_constraintTop_toBottomOf="@id/tvBack" />
+
     <ImageView
-        android:src="@drawable/ic_food"
-        android:layout_marginTop="26dp"
-        android:layout_marginStart="18dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/vLine"
+        android:id="@+id/imvAvatar"
         android:layout_width="64dp"
-        android:layout_height="64dp"/>
+        android:layout_height="64dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="26dp"
+        android:src="@drawable/ic_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vLine" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Vũ Trung Lập"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@id/imvAvatar"
+        app:layout_constraintTop_toTopOf="@id/imvAvatar" />
+
+    <ImageView
+        android:id="@+id/imvSmall"
+        android:layout_width="12dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="7dp"
+        android:src="@drawable/ic_smallperson"
+        app:layout_constraintStart_toStartOf="@id/tvName"
+        app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+    <TextView
+        android:id="@+id/tvPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="Công dân của Tỉnh"
+        android:textColor="#EB856A"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/imvSmall"
+        app:layout_constraintTop_toTopOf="@id/imvSmall" />
+
+    <TextView
+        android:id="@+id/tvNotification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="18dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/notification"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/imvAvatar" />
+
+    <TextView
+        android:id="@+id/tvTitleName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="Họ tên đầy đủ"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNotification" />
+
+    <EditText
+        android:id="@+id/edtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="18dp"
+        android:background="@drawable/border_shape"
+        android:fontFamily="@font/roboto_regular"
+        android:hint="Nguyễn Văn A"
+        android:inputType="text"
+        android:padding="9dp"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleName" />
+
+    <TextView
+        android:id="@+id/tvTitleBirthday"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="27dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="Ngày sinh"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toStartOf="@id/gl1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtName" />
+
+    <TextView
+        android:id="@+id/tvTitleNumberPhone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="18dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="Số ĐT"
+        android:textSize="19sp"
+        app:layout_constraintStart_toEndOf="@id/gl1"
+        app:layout_constraintTop_toBottomOf="@id/edtName"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl1"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5"/>
+
+    <EditText
+        android:id="@+id/edtBirthday"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/border_shape"
+        android:fontFamily="@font/roboto_regular"
+        android:hint="19/12/2003"
+        android:padding="9dp"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleBirthday"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/gl1"/>
+
+    <EditText
+        android:id="@+id/edtNumberPhone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="18dp"
+        android:background="@drawable/border_shape"
+        android:fontFamily="@font/roboto_regular"
+        android:padding="9dp"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleBirthday"
+        app:layout_constraintStart_toStartOf="@id/gl1"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvTitleEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="18dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="E-mail"
+        android:textSize="19sp"
+        app:layout_constraintTop_toBottomOf="@id/edtBirthday"/>
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="18dp"
+        android:background="@drawable/border_shape"
+        android:fontFamily="@font/roboto_regular"
+        android:padding="9dp"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleEmail"/>
+
+    <TextView
+        android:id="@+id/tvTitleCMT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="18dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="Số CMT"
+        android:textSize="19sp"
+        app:layout_constraintTop_toBottomOf="@id/edtEmail"/>
+
+    <EditText
+        android:id="@+id/edtCMT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="18dp"
+        android:background="@drawable/border_shape"
+        android:fontFamily="@font/roboto_regular"
+        android:padding="9dp"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleCMT"/>
+
+    <Button
+        android:backgroundTint="#EB856A"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:background="@drawable/border_shape"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="18sp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Cập nhật thông tin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
