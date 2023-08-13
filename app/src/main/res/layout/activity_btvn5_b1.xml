@@ -171,6 +171,7 @@
         app:layout_constraintTop_toBottomOf="@id/tvTitleBirthday" />
 
     <EditText
+        android:inputType="phone"
         android:id="@+id/edtNumberPhone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
