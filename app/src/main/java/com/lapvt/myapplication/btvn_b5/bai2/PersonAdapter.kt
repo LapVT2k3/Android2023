@@ -1,4 +1,4 @@
-package com.lapvt.myapplication.btvn_b5
+package com.lapvt.myapplication.btvn_b5.bai2
 
 import android.view.LayoutInflater
 import android.view.View

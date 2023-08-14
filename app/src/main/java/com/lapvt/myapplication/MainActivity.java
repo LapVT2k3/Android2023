@@ -9,11 +9,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.lapvt.myapplication.btvn_b5.Btvn5B1Activity;
+import com.lapvt.myapplication.btvn_b5.bai1.Btvn5B1Activity;
+import com.lapvt.myapplication.btvn_b5.bai2.Btvn5B2Activity;
 import com.lapvt.myapplication.buoi5.KotlinActivity;
 import com.lapvt.myapplication.buoi5.OnClick;
 import com.lapvt.myapplication.buoi5.PTB2Activity;
-import com.lapvt.myapplication.buoi5.StudentKotlin;
 
 public class MainActivity extends AppCompatActivity implements OnClick, View.OnClickListener {
     private Button btnKotlin;
@@ -49,10 +49,10 @@ public class MainActivity extends AppCompatActivity implements OnClick, View.OnC
             startActivity(intent);
         });
 
-//        btnBtvn5_2.setOnClickListener(view -> {
-//            Intent intent = new Intent(this, Btvn5B2Activity.class);
-//            startActivity(intent);
-//        });
+        btnBtvn5_2.setOnClickListener(view -> {
+            Intent intent = new Intent(this, Btvn5B2Activity.class);
+            startActivity(intent);
+        });
 //
 //        btnBtvn5_3.setOnClickListener(view -> {
 //            Intent intent = new Intent(this, Btvn5B3Activity.class);
