@@ -20,7 +20,7 @@ class PersonAdapter(private val personList: List<PersonData>): RecyclerView.Adap
     }
 
     override fun onBindViewHolder(holder: PersonViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.setData(personList.get(position))
     }
 
     class PersonViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
@@ -29,7 +29,9 @@ class PersonAdapter(private val personList: List<PersonData>): RecyclerView.Adap
         private val tvMessage: TextView = itemView.findViewById(R.id.tvMessage)
 
         public fun setData(person: PersonData) {
-            
+            imvAvatar.setImageBitmap(person.bitmap)
+            tvName.text = person.name
+            tvMessage.text = person.message
         }
     }
 }

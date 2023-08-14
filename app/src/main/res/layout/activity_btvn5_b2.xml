@@ -8,6 +8,7 @@
     tools:context=".btvn_b5.Btvn5B2Activity">
 
     <TextView
+        android:id="@+id/tvTitle"
         android:layout_marginTop="11dp"
         android:layout_gravity="center"
         android:fontFamily="@font/roboto_medium"
@@ -17,12 +18,14 @@
         android:layout_height="wrap_content"/>
 
     <View
+        android:id="@+id/vLine"
         android:background="#D6D3D3"
         android:layout_marginTop="11dp"
         android:layout_width="match_parent"
         android:layout_height="1dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
