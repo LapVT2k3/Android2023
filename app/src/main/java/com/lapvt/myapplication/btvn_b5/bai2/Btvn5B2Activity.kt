@@ -19,7 +19,7 @@ class Btvn5B2Activity : AppCompatActivity() {
         rcvData.adapter = adapter
     }
 
-    public fun createPersonList(): List<PersonData> {
+    public fun createPersonList(): ArrayList<PersonData> {
         val personList: ArrayList<PersonData> = ArrayList()
         personList.add(PersonData(BitmapFactory.decodeResource(resources, R.drawable.ic_friend1), "James", "Thank you! That was very helpful!"))
         personList.add(PersonData(BitmapFactory.decodeResource(resources, R.drawable.ic_friend2), "Will Kenny", "I know... I’m trying to get the funds."))
