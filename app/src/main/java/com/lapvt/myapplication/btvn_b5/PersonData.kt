@@ -1,3 +1,5 @@
 package com.lapvt.myapplication.btvn_b5
 
-data class PersonData(val name: String, val message: String)
+import android.graphics.Bitmap
+
+data class PersonData(val bitmap: Bitmap, val name: String, val message: String)
