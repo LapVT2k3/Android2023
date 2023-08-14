@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import com.lapvt.myapplication.btvn_b5.bai1.Btvn5B1Activity;
 import com.lapvt.myapplication.btvn_b5.bai2.Btvn5B2Activity;
+import com.lapvt.myapplication.btvn_b5.bai3.Btvn5B3Activity;
 import com.lapvt.myapplication.buoi5.KotlinActivity;
 import com.lapvt.myapplication.buoi5.OnClick;
 import com.lapvt.myapplication.buoi5.PTB2Activity;
@@ -53,11 +54,11 @@ public class MainActivity extends AppCompatActivity implements OnClick, View.OnC
             Intent intent = new Intent(this, Btvn5B2Activity.class);
             startActivity(intent);
         });
-//
-//        btnBtvn5_3.setOnClickListener(view -> {
-//            Intent intent = new Intent(this, Btvn5B3Activity.class);
-//            startActivity(intent);
-//        });
+
+        btnBtvn5_3.setOnClickListener(view -> {
+            Intent intent = new Intent(this, Btvn5B3Activity.class);
+            startActivity(intent);
+        });
     }
 
     // Hàm không trả về giá trị (hàm void)

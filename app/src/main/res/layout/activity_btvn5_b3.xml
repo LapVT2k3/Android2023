@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".btvn_b5.bai3.Btvn5B3Activity">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="56sp"
+        android:text="Search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:background="@drawable/border_shape"
+        android:id="@+id/tvSearch"
+        android:layout_below="@id/tvTitle"
+        android:layout_marginTop="32dp"
+        android:layout_alignStart="@id/tvTitle"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="18sp"
+        android:text="dogs"
+        android:padding="17dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    
+    <TextView
+        android:id="@+id/tvTileResult"
+        android:layout_marginTop="32dp"
+        android:layout_alignStart="@id/tvSearch"
+        android:layout_below="@id/tvSearch"
+        android:fontFamily="@font/roboto_bold"
+        android:text="ALL RESULTS"
+        android:textSize="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvData"
+        android:layout_below="@id/tvTileResult"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
