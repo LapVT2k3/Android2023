@@ -95,10 +95,10 @@ public class FolderAdapter extends RecyclerView.Adapter<FolderAdapter.FolderView
     }
 
     protected class FolderViewHolder extends RecyclerView.ViewHolder {
-        private TextView tvFolderName;
-        private ImageButton imbFix;
-        private ImageButton imbDelete;
-        private EditText edtFolderName;
+        private final TextView tvFolderName;
+        private final ImageButton imbFix;
+        private final ImageButton imbDelete;
+        private final EditText edtFolderName;
         public FolderViewHolder(@NonNull View itemView) {
             super(itemView);
             tvFolderName = itemView.findViewById(R.id.tvFolderName);

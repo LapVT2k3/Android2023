@@ -59,7 +59,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
     }
 
     protected class BookViewHolder extends RecyclerView.ViewHolder {
-        private TextView tvNameBook;
+        private final TextView tvNameBook;
 
         public BookViewHolder(@NonNull View itemView) {
             super(itemView);

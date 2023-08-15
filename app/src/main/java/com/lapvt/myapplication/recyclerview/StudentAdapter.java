@@ -76,8 +76,8 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
 
     protected class StudentViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tvName;
-        private TextView tvAge;
+        private final TextView tvName;
+        private final TextView tvAge;
 
         public StudentViewHolder(@NonNull View itemView) {
             super(itemView);

@@ -74,11 +74,11 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.GroupViewHol
     }
 
     protected class GroupViewHolder extends RecyclerView.ViewHolder {
-        private ImageView imvImage;
-        private TextView tvNameGroup;
-        private TextView tvNumOfFans;
-        private TextView tvNumOfLatestPosts;
-        private TextView tvStatus;
+        private final ImageView imvImage;
+        private final TextView tvNameGroup;
+        private final TextView tvNumOfFans;
+        private final TextView tvNumOfLatestPosts;
+        private final TextView tvStatus;
 
         public GroupViewHolder(@NonNull View itemView) {
             super(itemView);
