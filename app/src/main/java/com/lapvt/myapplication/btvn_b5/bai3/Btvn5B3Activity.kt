@@ -18,7 +18,9 @@ class Btvn5B3Activity : AppCompatActivity() {
 
         val adapter = ImageAdapter(creatImageList())
         rcvData.layoutManager = GridLayoutManager(this, 3)
+        rcvData.addItemDecoration(GridSpacingItemDecoration(3, 50, true))
         rcvData.adapter = adapter
+
     }
 
     private fun creatImageList(): List<ImageData> {
