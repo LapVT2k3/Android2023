@@ -3,7 +3,10 @@ package com.lapvt.myapplication.btvn_b5.bai3
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.lapvt.myapplication.R
 
 class Btvn5B3Activity : AppCompatActivity() {
@@ -13,7 +16,9 @@ class Btvn5B3Activity : AppCompatActivity() {
 
         val rcvData: RecyclerView = findViewById(R.id.rcvData)
 
-
+        val adapter = ImageAdapter(creatImageList())
+        rcvData.layoutManager = GridLayoutManager(this, 3)
+        rcvData.adapter = adapter
     }
 
     private fun creatImageList(): List<ImageData> {
