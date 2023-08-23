@@ -20,7 +20,7 @@ class PersonAdapter(private val personList: List<PersonData>): RecyclerView.Adap
     }
 
     override fun onBindViewHolder(holder: PersonViewHolder, position: Int) {
-        holder.setData(personList.get(position))
+        holder.setData(personList[position])
     }
 
     class PersonViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
