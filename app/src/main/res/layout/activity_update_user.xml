@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".chua_btvn_b5.bai1.UpdateUserActivity">
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:title="Cá nhân hóa" />
+
+    <View
+        android:id="@+id/vDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/toolbar"
+        android:background="#888383" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnUpdate"
+        android:layout_below="@id/vDivider">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imvAvatar"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="26dp"
+                android:src="@drawable/ic_avatar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Vũ Trung Lập"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imvAvatar"
+                app:layout_constraintTop_toTopOf="@id/imvAvatar"
+                app:layout_constraintBottom_toTopOf="@id/tvPosition"/>
+
+            <TextView
+                android:fontFamily="@font/roboto_regular"
+                android:id="@+id/tvPosition"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:drawablePadding="4dp"
+                android:text="Công dân của tỉnh"
+                android:textColor="#EB856A"
+                android:textSize="12sp"
+                app:drawableStartCompat="@drawable/ic_avatar_vector"
+                app:layout_constraintEnd_toEndOf="@id/tvName"
+                app:layout_constraintStart_toStartOf="@id/tvName"
+                app:layout_constraintTop_toBottomOf="@id/tvName"
+                app:layout_constraintBottom_toBottomOf="@id/imvAvatar"/>
+
+            <TextView
+                android:fontFamily="@font/roboto_regular"
+                android:id="@+id/tvContent"
+                android:textColor="@color/black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/notification"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@id/tvName"
+                app:layout_constraintStart_toStartOf="@id/imvAvatar"
+                app:layout_constraintTop_toBottomOf="@id/imvAvatar" />
+
+            <TextView
+                android:id="@+id/tvFullNameTitle"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@id/tvContent"
+                app:layout_constraintTop_toBottomOf="@id/tvContent"
+                app:layout_constraintEnd_toEndOf="@id/tvContent"
+                android:text="@string/full_name_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+            
+            <EditText
+                android:maxLength="50"
+                android:inputType="text"
+                android:textSize="16sp"
+                android:background="@drawable/bg_edittext"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:paddingStart="12dp"
+                android:hint="Nguyễn Văn A"
+                android:id="@+id/edtFullName"
+                android:layout_marginTop="2dp"
+                app:layout_constraintEnd_toEndOf="@id/tvFullNameTitle"
+                app:layout_constraintStart_toStartOf="@id/tvFullNameTitle"
+                app:layout_constraintTop_toBottomOf="@id/tvFullNameTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginEnd="20dp"
+                android:textSize="16sp"
+                android:layout_marginTop="26dp"
+                app:layout_constraintStart_toStartOf="@id/edtFullName"
+                app:layout_constraintTop_toBottomOf="@id/edtFullName"
+                app:layout_constraintEnd_toStartOf="@id/tvPhoneTitle"
+                android:text="@string/tvDateTitle"
+                android:id="@+id/tvDateTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@id/tvDateTitle"
+                app:layout_constraintTop_toTopOf="@id/tvDateTitle"
+                app:layout_constraintEnd_toEndOf="@id/edtFullName"
+                android:text="@string/tvPhoneTitle"
+                android:id="@+id/tvPhoneTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:background="@drawable/bg_edittext"
+                android:textSize="16sp"
+                android:layout_marginTop="2dp"
+                app:layout_constraintStart_toStartOf="@id/tvDateTitle"
+                app:layout_constraintTop_toBottomOf="@id/tvDateTitle"
+                app:layout_constraintEnd_toEndOf="@id/tvDateTitle"
+                android:hint="27/10/1990"
+                android:paddingStart="12dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingEnd="10dp"
+                android:id="@+id/tvDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:drawableEndCompat="@drawable/ic_calendar" />
+
+            <EditText
+                android:inputType="phone"
+                android:maxLength="10"
+                android:textSize="16sp"
+                android:background="@drawable/bg_edittext"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:paddingStart="12dp"
+                android:id="@+id/tvPhone"
+                android:layout_marginTop="2dp"
+                app:layout_constraintEnd_toEndOf="@id/tvPhoneTitle"
+                app:layout_constraintStart_toStartOf="@id/tvPhoneTitle"
+                app:layout_constraintTop_toBottomOf="@id/tvPhoneTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@id/tvDate"
+                app:layout_constraintTop_toBottomOf="@id/tvDate"
+                app:layout_constraintEnd_toEndOf="@id/tvFullNameTitle"
+                android:text="@string/email_title"
+                android:id="@+id/tvEmailTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:paddingStart="12dp"
+                android:maxLength="50"
+                android:inputType="textEmailAddress"
+                android:textSize="16sp"
+                android:background="@drawable/bg_edittext"
+                android:id="@+id/edtEmail"
+                android:layout_marginTop="2dp"
+                app:layout_constraintEnd_toEndOf="@id/tvFullNameTitle"
+                app:layout_constraintStart_toStartOf="@id/tvFullNameTitle"
+                app:layout_constraintTop_toBottomOf="@id/tvEmailTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@id/edtEmail"
+                app:layout_constraintTop_toBottomOf="@id/edtEmail"
+                app:layout_constraintEnd_toEndOf="@id/edtEmail"
+                android:text="@string/cmt_title"
+                android:id="@+id/tvCmtTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:paddingStart="12dp"
+                android:maxLength="20"
+                android:inputType="number"
+                android:textSize="16sp"
+                android:background="@drawable/bg_edittext"
+                android:id="@+id/edtCmt"
+                android:layout_marginTop="2dp"
+                app:layout_constraintEnd_toEndOf="@id/tvCmtTitle"
+                app:layout_constraintStart_toStartOf="@id/tvCmtTitle"
+                app:layout_constraintTop_toBottomOf="@id/tvCmtTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/btnUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_button_enable"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Cập nhật thông tin"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
+</RelativeLayout>

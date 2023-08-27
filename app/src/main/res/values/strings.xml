@@ -16,5 +16,10 @@
     <string name="icon_close">icon_close</string>
     <string name="icon_note">icon_note</string>
     <string name="notification">Các thông tin các nhân chính xác giúp chúng tôi mang lại cho bạn những thông tin thú vị chính xác theo đúng thông tin của bạn.</string>
+    <string name="full_name_title">Họ tên đầy đủ <font color="#E40000">*</font></string>
+    <string name="tvDateTitle">Ngày sinh <font color="#E40000">*</font></string>
+    <string name="tvPhoneTitle">Số ĐT <font color="#E40000">*</font></string>
+    <string name="email_title">Email <font color="#E40000">*</font></string>
+    <string name="cmt_title">Số CMT <font color="#E40000">*</font></string>
 
 </resources>
