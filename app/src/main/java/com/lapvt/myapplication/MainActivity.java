@@ -87,6 +87,8 @@ public class MainActivity extends AppCompatActivity implements OnClick, View.OnC
         StudentKotlin studentKotlin = new StudentKotlin(1.5, "Nam");
         studentKotlin.setName("Vũ Trung Lập");
         studentKotlin.setAge(20);
+
+        Buoi6Activity.Database.INSTANCE.suaDuLieu();
     }
 
     // Hàm không trả về giá trị (hàm void)

@@ -28,7 +28,7 @@
         android:layout_height="30dp"/>
     
     <TextView
-        android:id="@id/tvNameBook"
+        android:id="@+id/tvNameBook"
         app:layout_constraintStart_toEndOf="@id/imvImage"
         app:layout_constraintTop_toTopOf="@id/vBorder"
         app:layout_constraintBottom_toBottomOf="@id/vBorder"
