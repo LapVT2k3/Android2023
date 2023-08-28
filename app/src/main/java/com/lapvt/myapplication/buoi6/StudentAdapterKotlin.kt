@@ -10,13 +10,15 @@ import com.lapvt.myapplication.recyclerview.Student
 
 class StudentAdapterKotlin(val studentList: List<Student>): RecyclerView.Adapter<StudentAdapterKotlin.StudentViewHolder>() {
     class StudentViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        private val tvName = itemView.findViewById<TextView>(R.id.tvName)
+        private val tvNameStudent = itemView.findViewById<TextView>(R.id.tvNameStudent)
         private val tvAge = itemView.findViewById<TextView>(R.id.tvAge)
         fun setData(student: Student) {
-            tvName.text = student.name
+            tvNameStudent.text = student.name
             tvAge.text = "${student.age} tuổi"
         }
     }
+
+    var onClickItem: ((Student) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_student, parent, false)
@@ -29,5 +31,8 @@ class StudentAdapterKotlin(val studentList: List<Student>): RecyclerView.Adapter
 
     override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
         holder.setData(studentList[position])
+        holder.itemView.setOnClickListener {
+            onClickItem?.invoke(studentList[position])
+        }
     }
 }

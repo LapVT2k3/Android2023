@@ -81,7 +81,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
 
         public StudentViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvName = itemView.findViewById(R.id.tvNameBook);
+            tvName = itemView.findViewById(R.id.tvName1);
             tvAge = itemView.findViewById(R.id.tvAge);
         }
 
