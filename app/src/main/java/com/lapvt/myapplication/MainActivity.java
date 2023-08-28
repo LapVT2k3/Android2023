@@ -18,6 +18,7 @@ import com.lapvt.myapplication.buoi5.OnClick;
 import com.lapvt.myapplication.buoi5.PTB2Activity;
 import com.lapvt.myapplication.buoi5.StudentKotlin;
 
+import com.lapvt.myapplication.buoi6.Buoi6Activity;
 import com.lapvt.myapplication.recyclerview.RecyclerViewActivity;
 import com.lapvt.myapplication.recyclerviewb1.RecyclerViewB1Activity;
 import com.lapvt.myapplication.recyclerviewb2.RecyclerViewB2Activity;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements OnClick, View.OnC
     private Button btnMerge;
     private Button btnKotlin;
     private Button btnPtb2Kotlin;
+    private Button btnBuoi6;
 
     private int count;
 
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements OnClick, View.OnC
         btnMerge = findViewById(R.id.btnMerge);
         btnKotlin = findViewById(R.id.btnKotlin);
         btnPtb2Kotlin = findViewById(R.id.btnPtb2Kotlin);
+        btnBuoi6 = findViewById(R.id.btnBuoi6);
 
         btnVertical.setOnClickListener(view -> {
             Intent intent = new Intent(this, RecyclerViewVerticalActivity.class);
@@ -73,6 +76,11 @@ public class MainActivity extends AppCompatActivity implements OnClick, View.OnC
 
         btnPtb2Kotlin.setOnClickListener(view -> {
             Intent intent = new Intent(this, PTB2Activity.class);
+            startActivity(intent);
+        });
+
+        btnBuoi6.setOnClickListener(view -> {
+            Intent intent = new Intent(this, Buoi6Activity.class);
             startActivity(intent);
         });
 
