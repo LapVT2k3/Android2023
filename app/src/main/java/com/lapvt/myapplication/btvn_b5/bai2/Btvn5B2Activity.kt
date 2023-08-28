@@ -25,10 +25,10 @@ class Btvn5B2Activity : AppCompatActivity() {
 
     public fun createPersonList(): ArrayList<PersonData> {
         val personList: ArrayList<PersonData> = ArrayList()
-        personList.add(PersonData(BitmapFactory.decodeResource(resources, R.drawable.ic_friend1), "James", "Thank you! That was very helpful!"))
-        personList.add(PersonData(BitmapFactory.decodeResource(resources, R.drawable.ic_friend2), "Will Kenny", "I know... I’m trying to get the funds."))
-        personList.add(PersonData(BitmapFactory.decodeResource(resources, R.drawable.ic_friend1), "James", "Thank you! That was very helpful!"))
-        personList.add(PersonData(BitmapFactory.decodeResource(resources, R.drawable.ic_friend2), "Will Kenny", "I know... I’m trying to get the funds."))
+        personList.add(PersonData(R.drawable.ic_friend1, "James", "Thank you! That was very helpful!"))
+        personList.add(PersonData(R.drawable.ic_friend2, "Will Kenny", "I know... I’m trying to get the funds."))
+        personList.add(PersonData(R.drawable.ic_friend1, "James", "Thank you! That was very helpful!"))
+        personList.add(PersonData(R.drawable.ic_friend2, "Will Kenny", "I know... I’m trying to get the funds."))
         return personList
     }
 }

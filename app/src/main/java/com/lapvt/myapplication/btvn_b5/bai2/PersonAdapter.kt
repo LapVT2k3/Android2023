@@ -32,7 +32,7 @@ class PersonAdapter(private val personList: List<PersonData>): RecyclerView.Adap
         private val tvMessage: TextView = itemView.findViewById(R.id.tvMessage)
 
         public fun setData(person: PersonData) {
-            imvAvatar.setImageBitmap(person.bitmap)
+            imvAvatar.setImageResource(person.image)
             tvName.text = person.name
             tvMessage.text = person.message
         }
