@@ -37,4 +37,10 @@
         android:layout_height="wrap_content"
         android:text="Buổi 5 - Bài 3" />
 
+    <Button
+        android:id="@+id/btnChua_Btvn5_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buổi 5 - Chữa bài 1" />
+
 </LinearLayout>

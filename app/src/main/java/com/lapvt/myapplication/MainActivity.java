@@ -15,6 +15,7 @@ import com.lapvt.myapplication.btvn_b5.bai3.Btvn5B3Activity;
 import com.lapvt.myapplication.buoi5.KotlinActivity;
 import com.lapvt.myapplication.buoi5.OnClick;
 import com.lapvt.myapplication.buoi5.PTB2Activity;
+import com.lapvt.myapplication.chua_btvn_b5.bai1.UpdateUserActivity;
 
 public class MainActivity extends AppCompatActivity implements OnClick, View.OnClickListener {
     private Button btnKotlin;
@@ -22,8 +23,7 @@ public class MainActivity extends AppCompatActivity implements OnClick, View.OnC
     private Button btnBtvn5_1;
     private Button btnBtvn5_2;
     private Button btnBtvn5_3;
-
-
+    private Button btnChua_Btvn5_1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements OnClick, View.OnC
         btnBtvn5_1 = findViewById(R.id.btnBtvn5_1);
         btnBtvn5_2 = findViewById(R.id.btnBtvn5_2);
         btnBtvn5_3 = findViewById(R.id.btnBtvn5_3);
+        btnChua_Btvn5_1 = findViewById(R.id.btnChua_Btvn5_1);
 
         btnKotlin.setOnClickListener(view -> {
             Intent intent = new Intent(this, KotlinActivity.class);
@@ -57,6 +58,11 @@ public class MainActivity extends AppCompatActivity implements OnClick, View.OnC
 
         btnBtvn5_3.setOnClickListener(view -> {
             Intent intent = new Intent(this, Btvn5B3Activity.class);
+            startActivity(intent);
+        });
+
+        btnChua_Btvn5_1.setOnClickListener(view -> {
+            Intent intent = new Intent(this, UpdateUserActivity.class);
             startActivity(intent);
         });
     }
