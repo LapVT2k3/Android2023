@@ -9,18 +9,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.lapvt.myapplication.R
 
 class PersonAdapter(private val personList: List<PersonData>): RecyclerView.Adapter<PersonAdapter.PersonViewHolder>() {
-
+    var onClickItem: ((PersonData) -> Unit)? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_person, parent, false)
         return PersonViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-        return personList.size
+        return if (personList.isNotEmpty()) personList.size else 0
     }
 
     override fun onBindViewHolder(holder: PersonViewHolder, position: Int) {
         holder.setData(personList[position])
+        holder.itemView.setOnClickListener {
+            onClickItem?.invoke(personList[position])
+        }
     }
 
     class PersonViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
