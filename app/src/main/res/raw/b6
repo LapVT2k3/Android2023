@@ -1,0 +1,16 @@
+1. Lambda function
+- Lợi ích:
+    + Sử dụng để lắng nghe các sự kiện click, call back thay cho interface
+    + Sử dụng như một callback
+        VD: Khi ta gọi 1 API mà không biết khi nào API gọi xong thì ta dùng 1 callback
+        để khi API được gọi xong thì callback sẽ được gọi và ta sẽ nhận được callback ấy
+2. Extension function
+- Hàm mở rộng cho 1 đối tượng nào đó: TextView, View, ViewGroup, ...
+- Cách viết:
+    fun <tên_đối_tượng>.<tên_hàm>(<tham số truyền vào>) {
+        Xử lý
+    }
+3. Singleton class
+- Đây là 1 design pattern (cách thiết kế code để ta dễ đọc, dễ maintain)
+VD: Có 1 project. Tạo 1 biến database để lấy, xóa, sửa dữ liệu
+    Singleton nghĩa là biến database đó chỉ được tạo 1 lần trong suốt vòng đời của ứng dụng

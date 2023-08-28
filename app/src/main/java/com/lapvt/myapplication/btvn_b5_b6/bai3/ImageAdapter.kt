@@ -9,18 +9,21 @@ import com.lapvt.myapplication.R
 
 class ImageAdapter(private val imageList: List<ImageData>): RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
 
-
+    var onClickItem: ((ImageData) -> Unit)? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_dog, parent, false)
         return ImageViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-        return imageList.size
+        return if (imageList.isNotEmpty()) imageList.size else 0
     }
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
-        holder.setData(imageList.get(position))
+        holder.setData(imageList[position])
+        holder.itemView.setOnClickListener {
+            onClickItem?.invoke(imageList[position])
+        }
     }
 
     class ImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

@@ -3,9 +3,11 @@ package com.lapvt.myapplication.btvn_b5_b6.bai3
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lapvt.myapplication.R
+import com.lapvt.myapplication.btvn_b5_b6.bai2.getData
 
 class Btvn5B3Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +20,9 @@ class Btvn5B3Activity : AppCompatActivity() {
         rcvData.layoutManager = GridLayoutManager(this, 3)
         rcvData.addItemDecoration(GridSpacingItemDecoration(3, 50, true))
         rcvData.adapter = adapter
-
+        adapter.onClickItem = {
+            Toast.makeText(this, it.getData(), Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun creatImageList(): List<ImageData> {
