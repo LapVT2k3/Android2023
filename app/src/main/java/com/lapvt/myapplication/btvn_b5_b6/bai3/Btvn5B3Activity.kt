@@ -1,12 +1,10 @@
-package com.lapvt.myapplication.btvn_b5.bai3
+package com.lapvt.myapplication.btvn_b5_b6.bai3
 
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.lapvt.myapplication.R
 
 class Btvn5B3Activity : AppCompatActivity() {

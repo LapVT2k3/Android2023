@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".btvn_b5.bai2.Btvn5B2Activity">
+    tools:context=".btvn_b5_b6.bai2.Btvn5B2Activity">
 
     <TextView
         android:id="@+id/tvTitle"

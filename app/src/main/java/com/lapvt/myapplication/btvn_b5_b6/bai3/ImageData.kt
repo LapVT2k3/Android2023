@@ -1,4 +1,4 @@
-package com.lapvt.myapplication.btvn_b5.bai3
+package com.lapvt.myapplication.btvn_b5_b6.bai3
 
 import android.graphics.Bitmap
 

@@ -9,9 +9,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.lapvt.myapplication.btvn_b5.bai1.Btvn5B1Activity;
-import com.lapvt.myapplication.btvn_b5.bai2.Btvn5B2Activity;
-import com.lapvt.myapplication.btvn_b5.bai3.Btvn5B3Activity;
+import com.lapvt.myapplication.btvn_b5_b6.bai1.Btvn5B1Activity;
+import com.lapvt.myapplication.btvn_b5_b6.bai2.Btvn5B2Activity;
+import com.lapvt.myapplication.btvn_b5_b6.bai3.Btvn5B3Activity;
 import com.lapvt.myapplication.buoi5.KotlinActivity;
 import com.lapvt.myapplication.buoi5.OnClick;
 import com.lapvt.myapplication.buoi5.PTB2Activity;

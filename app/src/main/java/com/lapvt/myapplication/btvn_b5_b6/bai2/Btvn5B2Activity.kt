@@ -1,6 +1,5 @@
-package com.lapvt.myapplication.btvn_b5.bai2
+package com.lapvt.myapplication.btvn_b5_b6.bai2
 
-import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast

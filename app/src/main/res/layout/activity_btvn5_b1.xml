@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".btvn_b5.bai1.Btvn5B1Activity">
+    tools:context=".btvn_b5_b6.bai1.Btvn5B1Activity">
 
     <TextView
         android:id="@+id/tvBack"

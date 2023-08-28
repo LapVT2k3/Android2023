@@ -16,13 +16,13 @@
             android:name=".chua_btvn_b5.bai1.UpdateUserActivity"
             android:exported="false" />
         <activity
-            android:name=".btvn_b5.bai3.Btvn5B3Activity"
+            android:name=".btvn_b5_b6.bai3.Btvn5B3Activity"
             android:exported="false" />
         <activity
-            android:name=".btvn_b5.bai2.Btvn5B2Activity"
+            android:name=".btvn_b5_b6.bai2.Btvn5B2Activity"
             android:exported="false" />
         <activity
-            android:name=".btvn_b5.bai1.Btvn5B1Activity"
+            android:name=".btvn_b5_b6.bai1.Btvn5B1Activity"
             android:exported="false" />
         <activity
             android:name=".buoi5.PTB2Activity"
