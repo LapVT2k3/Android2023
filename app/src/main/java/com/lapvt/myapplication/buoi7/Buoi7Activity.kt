@@ -2,13 +2,25 @@ package com.lapvt.myapplication.buoi7
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.FrameLayout
 import com.lapvt.myapplication.R
 
 class Buoi7Activity : AppCompatActivity() {
+    private var flFragment1: FrameLayout? = null
+    private var flFragment2: FrameLayout? = null
+
+
     // Khởi tạo, findViewById, chỉ được gọi 1 lần (call api)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buoi7)
+        flFragment1 = findViewById(R.id.flFragment1)
+        flFragment2 = findViewById(R.id.flFragment2)
+
+        val fragment1 = Buoi7Fragment()
+        val fragment2 = Buoi7HaiFragment()
+
+
     }
 
     // Được gọi nhiều lần
