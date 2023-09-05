@@ -8,48 +8,6 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btnVertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hiển thị theo chiều dọc" />
-
-    <Button
-        android:id="@+id/btnHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hiển thị theo chiều ngang" />
-
-    <Button
-        android:id="@+id/btnGrid"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hiển thị theo hình ô vuông" />
-
-    <Button
-        android:id="@+id/btnMerge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="MergeAdapter" />
-
-    <Button
-        android:id="@+id/btnKotlin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Kotlin" />
-
-    <Button
-        android:id="@+id/btnPtb2Kotlin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Phương trình bậc 2 (Kotlin)" />
-
-    <Button
-        android:id="@+id/btnBuoi6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Buổi 6" />
-
-    <Button
         android:id="@+id/btnBuoi7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

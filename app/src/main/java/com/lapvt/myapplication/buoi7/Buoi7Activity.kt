@@ -1,14 +1,16 @@
 package com.lapvt.myapplication.buoi7
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.Toast
 import com.lapvt.myapplication.R
 
 class Buoi7Activity : AppCompatActivity() {
     private var flFragment1: FrameLayout? = null
-    private var flFragment2: FrameLayout? = null
+    private var btnOpen: Button? = null
 
 
     // Khởi tạo, findViewById, chỉ được gọi 1 lần (call api)
@@ -16,15 +18,15 @@ class Buoi7Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buoi7)
         flFragment1 = findViewById(R.id.flFragment1)
-//        flFragment2 = findViewById(R.id.flFragment2)
+        btnOpen = findViewById(R.id.btnOpen)
 
         val fragment1 = Buoi7Fragment()
-//        val fragment2 = Buoi7HaiFragment()
 
         val fragmentManager = supportFragmentManager
         val fragmentTransition = supportFragmentManager.beginTransaction()
         fragmentTransition.add(R.id.flFragment1, fragment1, fragment1.tag).commitAllowingStateLoss()
-//        fragmentTransition.add(R.id.flFragment2, fragment2)
+
+        openNewScreen()
     }
 
     // Được gọi nhiều lần
@@ -58,5 +60,16 @@ class Buoi7Activity : AppCompatActivity() {
 
     fun toastSomething() {
         Toast.makeText(this, "haha", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun openNewScreen() {
+        btnOpen?.setOnClickListener {
+            val intent = Intent(this, Buoi7HaiActivity::class.java)
+            // Truyền dữ liệu kiểu int
+            intent.putExtra("key1", 10)
+            // Truyền dữ liệu kiểu string
+            intent.putExtra("key2", "Tôi tên là Lập")
+            startActivity(intent)
+        }
     }
 }
