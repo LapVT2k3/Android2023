@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import com.lapvt.myapplication.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -18,6 +19,8 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class Buoi7Fragment : Fragment() {
+
+    private var btnClickMe: Button? = null
 
     // Khởi tạo 1 fragment
     // Set style, theme cho từng fragment
@@ -38,6 +41,15 @@ class Buoi7Fragment : Fragment() {
     // Khởi tạo các dữ liệu, gọi api, findViewById
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // Muốn gọi activity cha, sau đó ép kiểu về activity mà chúng ta muốn
+//        (activity as Buoi7Activity): Ép kiểu từ activity về Buoi7Activity, có thể bị lỗi khi
+//        activity đó ép kiểu về null
+//        (activity as? Buoi7Activity): Trong trường hợp ép kiểu thất bại thì kết quả trả về là null
+
+        btnClickMe = view.findViewById(R.id.btnClickMe)
+        btnClickMe?.setOnClickListener {
+            (activity as? Buoi7Activity)?.toastSomething()
+        }
     }
 
     override fun onStart() {
