@@ -20,8 +20,10 @@ class Buoi7HaiActivity : AppCompatActivity() {
 
         // Nhận dữ liệu
         val num = intent.extras?.getInt("key1", -1)
-        val text  = intent.extras?.getString("key2", "")
+        val text = intent.extras?.getString("key2", "")
+        val data = intent.extras?.get("key3") as? SevenData
 
-        tvShowData?.text = "$text _ $num"
+        val textString = "$text _ $num\n${data?.title}\n${data?.content}"
+        tvShowData?.text = textString
     }
 }

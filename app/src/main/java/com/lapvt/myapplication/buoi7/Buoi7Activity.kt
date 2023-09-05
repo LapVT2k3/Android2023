@@ -69,6 +69,12 @@ class Buoi7Activity : AppCompatActivity() {
             intent.putExtra("key1", 10)
             // Truyền dữ liệu kiểu string
             intent.putExtra("key2", "Tôi tên là Lập")
+
+            val data = SevenData().apply {
+                this.title = "Đây là title"
+                this.content = "Đây là content"
+            }
+            intent.putExtra("key3", data)
             startActivity(intent)
         }
     }
