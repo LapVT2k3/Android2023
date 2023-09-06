@@ -20,6 +20,21 @@ private const val ARG_PARAM2 = "param2"
  */
 class Buoi7Fragment : Fragment() {
 
+    companion object {
+        // Viết các key, các hằng
+        const val NAME = "Vũ Trung Lập"
+
+        // Viết trong đây dễ maintain code
+        fun newFragment(data: String): Buoi7Fragment {
+            val fragment = Buoi7Fragment()
+            val bundle = Bundle()
+            bundle.putString("key5", "Đây là string")
+            bundle.putString("key6", data)
+            fragment.arguments = bundle
+            return fragment
+        }
+    }
+
     private var btnClickMe: Button? = null
 
     // Khởi tạo 1 fragment
@@ -48,8 +63,12 @@ class Buoi7Fragment : Fragment() {
 
         btnClickMe = view.findViewById(R.id.btnClickMe)
         btnClickMe?.setOnClickListener {
-            (activity as? Buoi7Activity)?.toastSomething()
+            (activity as? Buoi7Activity)?.toastSomething("Pro")
+            (activity as? Buoi7Activity)?.so = "2"
         }
+
+        val text = arguments?.getString("key5", "")
+        btnClickMe?.text = text
     }
 
     override fun onStart() {

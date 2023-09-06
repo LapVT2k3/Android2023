@@ -1,5 +1,7 @@
 package com.lapvt.myapplication.buoi7
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -25,5 +27,12 @@ class Buoi7HaiActivity : AppCompatActivity() {
 
         val textString = "$text _ $num\n${data?.title}\n${data?.content}"
         tvShowData?.text = textString
+
+        btnBack?.setOnClickListener {
+            val intent = Intent()
+            intent.putExtra("key4", 1)
+            setResult(Activity.RESULT_OK, intent)
+            finish()
+        }
     }
 }

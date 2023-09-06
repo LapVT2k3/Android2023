@@ -1,27 +1,41 @@
 package com.lapvt.myapplication.buoi7
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContract
+import androidx.activity.result.contract.ActivityResultContracts
 import com.lapvt.myapplication.R
 
 class Buoi7Activity : AppCompatActivity() {
     private var flFragment1: FrameLayout? = null
     private var btnOpen: Button? = null
+    var so: String = ""
 
+    // Truyền ngược từ màn Buoi7Hai về màn Buoi7
+    // Dùng khi cần gọi đến các thứ mặc định trong máy (ví dụ: chọn ảnh, chụp ảnh...)
+    private val startForResult =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val so = result.data?.extras?.getInt("key4")
+                Toast.makeText(this, "$so", Toast.LENGTH_SHORT).show()
+            }
+    }
 
     // Khởi tạo, findViewById, chỉ được gọi 1 lần (call api)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buoi7)
+
         flFragment1 = findViewById(R.id.flFragment1)
         btnOpen = findViewById(R.id.btnOpen)
 
-        val fragment1 = Buoi7Fragment()
-
+        val fragment1 = Buoi7Fragment.newFragment("Đây là data")
         val fragmentManager = supportFragmentManager
         val fragmentTransition = supportFragmentManager.beginTransaction()
         fragmentTransition.add(R.id.flFragment1, fragment1, fragment1.tag).commitAllowingStateLoss()
@@ -58,8 +72,8 @@ class Buoi7Activity : AppCompatActivity() {
         super.onDestroy()
     }
 
-    fun toastSomething() {
-        Toast.makeText(this, "haha", Toast.LENGTH_SHORT).show()
+    fun toastSomething(text: String) {
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
     }
 
     private fun openNewScreen() {
@@ -75,7 +89,8 @@ class Buoi7Activity : AppCompatActivity() {
                 this.content = "Đây là content"
             }
             intent.putExtra("key3", data)
-            startActivity(intent)
+//            startActivity(intent)
+            startForResult.launch(intent)
         }
     }
 }
