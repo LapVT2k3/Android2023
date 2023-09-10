@@ -78,7 +78,7 @@ class Buoi7Activity : AppCompatActivity() {
 
     private fun openNewScreen() {
         btnOpen?.setOnClickListener {
-            val intent = Intent(this, Buoi7HaiActivity::class.java)
+            val intent = Intent(this, Buoi7BarActivity::class.java)
             // Truyền dữ liệu kiểu int
             intent.putExtra("key1", 10)
             // Truyền dữ liệu kiểu string
