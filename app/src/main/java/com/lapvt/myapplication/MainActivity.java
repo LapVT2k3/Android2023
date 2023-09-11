@@ -9,12 +9,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.lapvt.myapplication.btvn_b7.Screen1Activity;
 import com.lapvt.myapplication.buoi7.Buoi7Activity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnBuoi7;
-
+    private Button btnBtvnB7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +23,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         btnBuoi7 = findViewById(R.id.btnBuoi7);
+        btnBtvnB7 = findViewById(R.id.btnBtvnB7);
 
         btnBuoi7.setOnClickListener(view -> {
             Intent intent = new Intent(this, Buoi7Activity.class);
+            startActivity(intent);
+        });
+
+        btnBtvnB7.setOnClickListener(view -> {
+            Intent intent = new Intent(this, Screen1Activity.class);
             startActivity(intent);
         });
     }
