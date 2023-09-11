@@ -11,4 +11,9 @@ class Screen1Activity : AppCompatActivity() {
 
 
     }
+
+    public fun createItemList(): ArrayList<ItemData> {
+        val itemList: ArrayList<ItemData> = ArrayList()
+
+    }
 }
