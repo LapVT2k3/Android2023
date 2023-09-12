@@ -38,7 +38,7 @@
             app:layout_constraintTop_toTopOf="@id/tvCancel" />
 
         <TextView
-            android:id="@+id/tvAdd"
+            android:id="@+id/tvSave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="12dp"

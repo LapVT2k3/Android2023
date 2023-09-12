@@ -34,7 +34,7 @@
 
         <TextView
             android:textColor="#007AFF"
-            android:id="@+id/tvAdd"
+            android:id="@+id/tvSave"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/tvMainTitle"
             android:fontFamily="@font/roboto_medium"

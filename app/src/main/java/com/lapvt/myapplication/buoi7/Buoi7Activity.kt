@@ -91,6 +91,7 @@ class Buoi7Activity : AppCompatActivity() {
             intent.putExtra("key3", data)
 //            startActivity(intent)
             startForResult.launch(intent)
+
         }
     }
 }
