@@ -28,22 +28,13 @@ class Screen1Activity : AppCompatActivity() {
             Toast.makeText(this, "Thoát khỏi ứng dụng", Toast.LENGTH_SHORT).show()
         }
 
-        tvAdd.setOnClickListener {
-            val intent = Intent(this, Screen2Activity::class.java)
-            startActivity(intent)
-        }
-
         val rcvData: RecyclerView = findViewById(R.id.rcvData)
         rcvData.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
         val adapter = messageList?.let { MessageAdapter(it) }
         rcvData.adapter = adapter
 
-        adapter?.onClickItem = {
-
-        }
-
-        val startForResult =
+        val startForResult1 =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
                 if (result.resultCode == Activity.RESULT_OK) {
                     val message = result.data?.extras?.get("key1") as? MessageData
@@ -54,6 +45,30 @@ class Screen1Activity : AppCompatActivity() {
                     }
                 }
             }
+
+        val startForResult2 =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+                if (result.resultCode == Activity.RESULT_OK) {
+                    val message = result.data?.extras?.get("key3") as? MessageData
+                    val idx = result.data?.extras?.getInt("idx")
+                    if (message != null) {
+                        idx?.let { messageList?.set(it, message) }
+                    }
+                    idx?.let { adapter?.notifyItemChanged(it) }
+                }
+            }
+
+        adapter?.onClickItem = { message, position ->
+            val intent = Intent(this, Screen3Activity::class.java)
+            intent.putExtra("key2", message)
+            intent.putExtra("index", position)
+            startForResult2.launch(intent)
+        }
+
+        tvAdd.setOnClickListener {
+            val intent = Intent(this, Screen2Activity::class.java)
+            startForResult1.launch(intent)
+        }
 
     }
 

@@ -26,7 +26,9 @@ class Screen2Activity : AppCompatActivity() {
         tvSave.isEnabled = false
 
         tvCancel.setOnClickListener {
-
+            val intent = Intent()
+            setResult(RESULT_OK, intent)
+            finish()
         }
 
         edtTitle.addTextChangedListener {

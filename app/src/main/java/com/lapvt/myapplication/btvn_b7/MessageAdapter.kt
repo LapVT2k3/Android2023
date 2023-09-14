@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.lapvt.myapplication.R
 
 class MessageAdapter(private val messageList: ArrayList<MessageData>): RecyclerView.Adapter<MessageAdapter.MessageViewHolder>() {
-    var onClickItem: ((MessageData) -> Unit)? = null
+    var onClickItem: ((MessageData, Int) -> Unit)? = null
     class MessageViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         private val ivMessage: ImageView = itemView.findViewById(R.id.ivMessage)
         private val tvTitle: TextView = itemView.findViewById(R.id.tvTitle)
@@ -34,7 +34,7 @@ class MessageAdapter(private val messageList: ArrayList<MessageData>): RecyclerV
     override fun onBindViewHolder(holder: MessageViewHolder, position: Int) {
         holder.setData(messageList[position])
         holder.itemView.setOnClickListener {
-            onClickItem?.invoke(messageList[position])
+            onClickItem?.invoke(messageList[position], position)
         }
     }
 }
