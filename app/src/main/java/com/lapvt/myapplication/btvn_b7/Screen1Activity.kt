@@ -15,78 +15,127 @@ import com.lapvt.myapplication.R
 
 @Suppress("DEPRECATION")
 class Screen1Activity : AppCompatActivity() {
+    companion object {
+        const val KEY = "KEY"
+        const val TYPE_EDIT = "TYPE_EDIT"
+        const val TYPE_ADD = "TYPE_ADD"
+    }
+    private var ivBack: ImageView? = null
+    private var tvAdd: TextView? = null
+    private var messageList: ArrayList<MessageData> = ArrayList()
+    private var rcvData: RecyclerView? = null
+    private var adapter: MessageAdapter? = null
+    private var startForResult =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val type = result.data?.extras?.get(KEY)
+                if (type == TYPE_ADD) {
+                    val message = result.data?.extras?.get("message") as? MessageData
+                    message?.let { messageList.add(0, it) }
+                    adapter?.notifyItemInserted(0)
+                } else if (type == TYPE_EDIT) {
+                    val message = result.data?.extras?.get("message") as? MessageData
+                    message?.let { messageList.set(it.id, message) }
+                    message?.let { adapter?.notifyItemChanged(it.id) }
+                }
+            }
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_screen1)
 
-        val messageList: ArrayList<MessageData>?
-        val ivBack: ImageView = findViewById(R.id.ivBack)
-        val tvAdd: TextView = findViewById(R.id.tvSave)
+        ivBack = findViewById(R.id.ivBack)
+        tvAdd = findViewById(R.id.tvSave)
         messageList = createMessageList()
+        rcvData = findViewById(R.id.rcvData)
+        rcvData?.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        adapter = MessageAdapter(messageList)
+        rcvData?.adapter = adapter
 
-        ivBack.setOnClickListener {
-            Toast.makeText(this, "Thoát khỏi ứng dụng", Toast.LENGTH_SHORT).show()
+        ivBack?.setOnClickListener {
+            Toast.makeText(this, "Thoát khỏi màn hình", Toast.LENGTH_SHORT).show()
         }
 
-        val rcvData: RecyclerView = findViewById(R.id.rcvData)
-        rcvData.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-
-        val adapter = MessageAdapter(messageList)
-        rcvData.adapter = adapter
-
-        val startForResult1 =
-            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
-                if (result.resultCode == Activity.RESULT_OK) {
-                    val message = result.data?.extras?.get("key1") as? MessageData
-                    val i = messageList.size
-                    if (message != null) {
-                        i.let { messageList.add(it, message) }
-                        i.let { adapter.notifyItemInserted(it) }
-                    }
-                }
-            }
-
-        val startForResult2 =
-            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
-                if (result.resultCode == Activity.RESULT_OK) {
-                    val message = result.data?.extras?.get("key3") as? MessageData
-                    val idx = result.data?.extras?.getInt("idx")
-                    if (message != null) {
-                        idx?.let { messageList.set(it, message) }
-                    }
-                    idx?.let { adapter.notifyItemChanged(it) }
-                }
-            }
-
-        adapter.onClickItem = { message, position ->
+        adapter?.onClickItem = {
             val intent = Intent(this, Screen3Activity::class.java)
-            intent.putExtra("key2", message)
-            intent.putExtra("index", position)
-            startForResult2.launch(intent)
+            intent.putExtra("message", it)
+            startForResult.launch(intent)
         }
 
-        tvAdd.setOnClickListener {
+        tvAdd?.setOnClickListener {
             val intent = Intent(this, Screen2Activity::class.java)
-            startForResult1.launch(intent)
+            startForResult.launch(intent)
         }
 
     }
 
     private fun createMessageList(): ArrayList<MessageData> {
         val messageList: ArrayList<MessageData> = ArrayList()
-        messageList.add(MessageData(R.drawable.ic_message, "Tổng hợp tin tức thời sự", "Tổng hợp tin tức thời sự nóng hổi nhất, của tất cả các báo nổi nhất hiện nay"))
-        messageList.add(MessageData(R.drawable.ic_message, "Do It Your Self", "Sơn tùng MTP quá đẹp trai hát hay"))
-        messageList.add(MessageData(R.drawable.ic_message, "Cảm hứng sáng tạo", "Tổng hợp tin tức thời sự nóng hổi nhất, của tất cả các báo nổi nhất hiện nay"))
-        messageList.add(MessageData(R.drawable.ic_message, "Tổng hợp tin tức thời sự", "Tổng hợp tin tức thời sự nóng hổi nhất, của tất cả các báo nổi nhất hiện nay"))
-        messageList.add(MessageData(R.drawable.ic_message, "Do It Your Self", "Sơn tùng MTP quá đẹp trai hát hay"))
-        messageList.add(MessageData(R.drawable.ic_message, "Cảm hứng sáng tạo", "Tổng hợp tin tức thời sự nóng hổi nhất, của tất cả các báo nổi nhất hiện nay"))
-        messageList.add(MessageData(R.drawable.ic_message, "Tổng hợp tin tức thời sự", "Tổng hợp tin tức thời sự nóng hổi nhất, của tất cả các báo nổi nhất hiện nay"))
-        messageList.add(MessageData(R.drawable.ic_message, "Do It Your Self", "Sơn tùng MTP quá đẹp trai hát hay"))
-        messageList.add(MessageData(R.drawable.ic_message, "Cảm hứng sáng tạo", "Tổng hợp tin tức thời sự nóng hổi nhất, của tất cả các báo nổi nhất hiện nay"))
-        messageList.add(MessageData(R.drawable.ic_message, "Tổng hợp tin tức thời sự", "Tổng hợp tin tức thời sự nóng hổi nhất, của tất cả các báo nổi nhất hiện nay"))
-        messageList.add(MessageData(R.drawable.ic_message, "Do It Your Self", "Sơn tùng MTP quá đẹp trai hát hay"))
-        messageList.add(MessageData(R.drawable.ic_message, "Cảm hứng sáng tạo", "Tổng hợp tin tức thời sự nóng hổi nhất, của tất cả các báo nổi nhất hiện nay"))
+        messageList.add(
+            MessageData(
+                0,
+                R.drawable.ic_message,
+                "Tổng hợp tin tức thời sự",
+                "Tổng hợp tin tức thời sự nóng hổi nhất, của tất cả các báo nổi nhất hiện nay"
+            )
+        )
+        messageList.add(
+            MessageData(
+                1,
+                R.drawable.ic_message,
+                "Do It Your Self",
+                "Sơn tùng MTP quá đẹp trai hát hay"
+            )
+        )
+        messageList.add(
+            MessageData(
+                2,
+                R.drawable.ic_message,
+                "Cảm hứng sáng tạo",
+                "Tổng hợp tin tức thời sự nóng hổi nhất, của tất cả các báo nổi nhất hiện nay"
+            )
+        )
+        messageList.add(
+            MessageData(
+                3,
+                R.drawable.ic_message,
+                "Tổng hợp tin tức thời sự",
+                "Tổng hợp tin tức thời sự nóng hổi nhất, của tất cả các báo nổi nhất hiện nay"
+            )
+        )
+        messageList.add(
+            MessageData(
+                4,
+                R.drawable.ic_message,
+                "Do It Your Self",
+                "Sơn tùng MTP quá đẹp trai hát hay"
+            )
+        )
+        messageList.add(
+            MessageData(
+                5,
+                R.drawable.ic_message,
+                "Cảm hứng sáng tạo",
+                "Tổng hợp tin tức thời sự nóng hổi nhất, của tất cả các báo nổi nhất hiện nay"
+            )
+        )
+        messageList.add(
+            MessageData(
+                6,
+                R.drawable.ic_message,
+                "Tổng hợp tin tức thời sự",
+                "Tổng hợp tin tức thời sự nóng hổi nhất, của tất cả các báo nổi nhất hiện nay"
+            )
+        )
+        messageList.add(
+            MessageData(
+                7,
+                R.drawable.ic_message,
+                "Do It Your Self",
+                "Sơn tùng MTP quá đẹp trai hát hay"
+            )
+        )
         return messageList
     }
 }

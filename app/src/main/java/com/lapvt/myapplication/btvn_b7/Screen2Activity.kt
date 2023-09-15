@@ -11,49 +11,61 @@ import androidx.core.widget.addTextChangedListener
 import com.lapvt.myapplication.R
 
 class Screen2Activity : AppCompatActivity() {
+    private var tvCancel: TextView? = null
+    private var tvSave: TextView? = null
+    private var edtTitle: EditText? = null
+    private var edtContent: EditText? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_screen2)
 
-        val tvCancel: TextView = findViewById(R.id.tvCancel)
-        val tvSave: TextView = findViewById(R.id.tvSave)
-        val edtTitle: EditText = findViewById(R.id.edtTitle)
-        val edtContent: EditText = findViewById(R.id.edtContent)
+        tvCancel = findViewById(R.id.tvCancel)
+        tvSave = findViewById(R.id.tvSave)
+        edtTitle = findViewById(R.id.edtTitle)
+        edtContent = findViewById(R.id.edtContent)
         var textTitle = ""
         var textContent = ""
 
-        tvSave.setTextColor(Color.parseColor("#8E97AA"))
-        tvSave.isEnabled = false
+        tvSave?.setTextColor(Color.parseColor("#8E97AA"))
+        tvSave?.isEnabled = false
 
-        tvCancel.setOnClickListener {
+        tvCancel?.setOnClickListener {
             val intent = Intent()
             setResult(RESULT_OK, intent)
             finish()
         }
 
-        edtTitle.addTextChangedListener {
+        edtTitle?.addTextChangedListener {
             textTitle = it.toString().trim()
-            tvSave.isEnabled = textTitle.isNotEmpty() && textContent.isNotEmpty()
-            if (tvSave.isEnabled) {
-                tvSave.setTextColor(Color.parseColor("#007AFF"))
+            tvSave?.isEnabled = textTitle.isNotEmpty() && textContent.isNotEmpty()
+            if (tvSave?.isEnabled!!) {
+                tvSave?.setTextColor(Color.parseColor("#007AFF"))
             } else {
-                tvSave.setTextColor(Color.parseColor("#8E97AA"))
+                tvSave?.setTextColor(Color.parseColor("#8E97AA"))
             }
         }
 
-        edtContent.addTextChangedListener {
+        edtContent?.addTextChangedListener {
             textContent = it.toString().trim()
-            tvSave.isEnabled = textTitle.isNotEmpty() && textContent.isNotEmpty()
-            if (tvSave.isEnabled) {
-                tvSave.setTextColor(Color.parseColor("#007AFF"))
+            tvSave?.isEnabled = textTitle.isNotEmpty() && textContent.isNotEmpty()
+            if (tvSave?.isEnabled!!) {
+                tvSave?.setTextColor(Color.parseColor("#007AFF"))
             } else {
-                tvSave.setTextColor(Color.parseColor("#8E97AA"))
+                tvSave?.setTextColor(Color.parseColor("#8E97AA"))
             }
         }
 
-        tvSave.setOnClickListener {
+        tvSave?.setOnClickListener {
+            val message = MessageData(
+                System.currentTimeMillis().toInt(),
+                R.drawable.ic_message,
+                textTitle,
+                textContent
+            )
             val intent = Intent()
-            intent.putExtra("key1", MessageData(R.drawable.ic_message, textTitle, textContent))
+            intent.putExtra("message", message)
+            intent.putExtra(Screen1Activity.KEY, Screen1Activity.TYPE_ADD)
             setResult(Activity.RESULT_OK, intent)
             finish()
         }

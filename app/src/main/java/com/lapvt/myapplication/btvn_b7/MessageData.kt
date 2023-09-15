@@ -3,15 +3,17 @@ package com.lapvt.myapplication.btvn_b7
 import android.os.Parcel
 import android.os.Parcelable
 
-data class MessageData(val image: Int, val title: String?, val content: String?): Parcelable {
+data class MessageData(val id: Int, val image: Int, var title: String?, var content: String?) :
+    Parcelable {
     constructor(parcel: Parcel) : this(
+        parcel.readInt(),
         parcel.readInt(),
         parcel.readString(),
         parcel.readString()
-    ) {
-    }
+    )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeInt(id)
         parcel.writeInt(image)
         parcel.writeString(title)
         parcel.writeString(content)
