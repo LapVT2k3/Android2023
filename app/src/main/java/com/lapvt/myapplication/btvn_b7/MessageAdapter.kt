@@ -15,7 +15,7 @@ class MessageAdapter(private val messageList: ArrayList<MessageData>): RecyclerV
         private val tvTitle: TextView = itemView.findViewById(R.id.tvTitle)
         private val tvContent: TextView = itemView.findViewById(R.id.tvContent)
 
-        public fun setData(message: MessageData) {
+        fun setData(message: MessageData) {
             ivMessage.setImageResource(message.image)
             tvTitle.text = message.title
             tvContent.text = message.content

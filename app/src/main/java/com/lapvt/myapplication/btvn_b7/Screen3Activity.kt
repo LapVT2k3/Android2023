@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.core.widget.addTextChangedListener
 import com.lapvt.myapplication.R
 
+@Suppress("DEPRECATION")
 class Screen3Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

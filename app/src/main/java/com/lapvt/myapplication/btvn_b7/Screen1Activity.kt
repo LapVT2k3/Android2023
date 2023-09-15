@@ -13,13 +13,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lapvt.myapplication.R
 
+@Suppress("DEPRECATION")
 class Screen1Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_screen1)
 
-        var messageList: ArrayList<MessageData>? = null
+        val messageList: ArrayList<MessageData>?
         val ivBack: ImageView = findViewById(R.id.ivBack)
         val tvAdd: TextView = findViewById(R.id.tvSave)
         messageList = createMessageList()
@@ -31,17 +32,17 @@ class Screen1Activity : AppCompatActivity() {
         val rcvData: RecyclerView = findViewById(R.id.rcvData)
         rcvData.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
-        val adapter = messageList?.let { MessageAdapter(it) }
+        val adapter = MessageAdapter(messageList)
         rcvData.adapter = adapter
 
         val startForResult1 =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
                 if (result.resultCode == Activity.RESULT_OK) {
                     val message = result.data?.extras?.get("key1") as? MessageData
-                    val i = messageList?.size
+                    val i = messageList.size
                     if (message != null) {
-                        i?.let { messageList?.add(it, message) }
-                        i?.let { adapter?.notifyItemInserted(it) }
+                        i.let { messageList.add(it, message) }
+                        i.let { adapter.notifyItemInserted(it) }
                     }
                 }
             }
@@ -52,13 +53,13 @@ class Screen1Activity : AppCompatActivity() {
                     val message = result.data?.extras?.get("key3") as? MessageData
                     val idx = result.data?.extras?.getInt("idx")
                     if (message != null) {
-                        idx?.let { messageList?.set(it, message) }
+                        idx?.let { messageList.set(it, message) }
                     }
-                    idx?.let { adapter?.notifyItemChanged(it) }
+                    idx?.let { adapter.notifyItemChanged(it) }
                 }
             }
 
-        adapter?.onClickItem = { message, position ->
+        adapter.onClickItem = { message, position ->
             val intent = Intent(this, Screen3Activity::class.java)
             intent.putExtra("key2", message)
             intent.putExtra("index", position)
@@ -72,7 +73,7 @@ class Screen1Activity : AppCompatActivity() {
 
     }
 
-    public fun createMessageList(): ArrayList<MessageData>? {
+    private fun createMessageList(): ArrayList<MessageData> {
         val messageList: ArrayList<MessageData> = ArrayList()
         messageList.add(MessageData(R.drawable.ic_message, "Tổng hợp tin tức thời sự", "Tổng hợp tin tức thời sự nóng hổi nhất, của tất cả các báo nổi nhất hiện nay"))
         messageList.add(MessageData(R.drawable.ic_message, "Do It Your Self", "Sơn tùng MTP quá đẹp trai hát hay"))
