@@ -11,6 +11,7 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
 import com.lapvt.myapplication.R
+import com.lapvt.myapplication.buoi8.setOnSingleClick
 
 class Buoi7Activity : AppCompatActivity() {
     private var flFragment1: FrameLayout? = null
@@ -77,6 +78,9 @@ class Buoi7Activity : AppCompatActivity() {
     }
 
     private fun openNewScreen() {
+        btnOpen?.setOnSingleClick {
+
+        }
         btnOpen?.setOnClickListener {
             val intent = Intent(this, Buoi7BarActivity::class.java)
             // Truyền dữ liệu kiểu int

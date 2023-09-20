@@ -4,6 +4,7 @@ package com.lapvt.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +17,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button btnBuoi7;
     private Button btnBtvnB7;
+    private Button btnCall;
+    private Button btnCheckEvent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnBuoi7 = findViewById(R.id.btnBuoi7);
         btnBtvnB7 = findViewById(R.id.btnBtvnB7);
+        btnCall = findViewById(R.id.btnCall);
+        btnCheckEvent = findViewById(R.id.btnCheckEvent);
 
         btnBuoi7.setOnClickListener(view -> {
             Intent intent = new Intent(this, Buoi7Activity.class);
@@ -33,6 +38,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnBtvnB7.setOnClickListener(view -> {
             Intent intent = new Intent(this, Screen1Activity.class);
             startActivity(intent);
+        });
+
+        btnCall.setOnClickListener(view -> {
+            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel: " + "0353649148"));
+            startActivity(intent);
+        });
+
+        btnCheckEvent.setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onClick(View view) {
+                super.onClick(view);
+                startActivity(new Intent(MainActivity.this, Screen1Activity.class));
+            }
         });
     }
 

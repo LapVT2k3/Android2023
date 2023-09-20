@@ -19,4 +19,16 @@
         android:layout_height="wrap_content"
         android:text="BTVN buổi 7" />
 
+    <Button
+        android:id="@+id/btnCall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gọi điện thoại" />
+
+    <Button
+        android:id="@+id/btnCheckEvent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kiểm tra sự kiện bấm" />
+
 </LinearLayout>
