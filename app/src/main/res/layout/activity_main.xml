@@ -31,4 +31,10 @@
         android:layout_height="wrap_content"
         android:text="Kiểm tra sự kiện bấm" />
 
+    <Button
+        android:id="@+id/btnBuoi8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buổi 8" />
+
 </LinearLayout>
