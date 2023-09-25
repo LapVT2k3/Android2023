@@ -19,12 +19,23 @@ class Buoi8Activity : AppCompatActivity() {
         tvName.text = SharePreferencesUtils.getName(this)
 
         btnSave.setOnSingleClick {
-            val name = edtName.text.toString().trim()
-            SharePreferencesUtils.saveName(name, this)
+//            val name = edtName.text.toString().trim()
+//            SharePreferencesUtils.saveName(name, this)
+//
+//            // Lấy dữ liệu name được lưu ở local và set ở textView
+//            tvName.text = SharePreferencesUtils.getName(this)
 
-            // Lấy dữ liệu name được lưu ở local và set ở textView
-            tvName.text = SharePreferencesUtils.getName(this)
+            AppRoomDatabase.getDatabase(this).userProfileDao().insert(UserProfile(
+                name = "Vũ Trung Lập ${System.currentTimeMillis()}",
+                age = 20,
+                gender = "Nam",
+                height = "165",
+                weight = "63"
+            ))
+
+            tvName.text = AppRoomDatabase.getDatabase(this).userProfileDao().getAllUsers().toString()
         }
+        tvName.text = AppRoomDatabase.getDatabase(this).userProfileDao().getAllUsers().toString()
 
     }
 }
