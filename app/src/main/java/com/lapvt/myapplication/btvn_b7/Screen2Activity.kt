@@ -39,7 +39,7 @@ class Screen2Activity : AppCompatActivity() {
         edtTitle?.addTextChangedListener {
             textTitle = it.toString().trim()
             tvSave?.isEnabled = textTitle.isNotEmpty() && textContent.isNotEmpty()
-            if (tvSave?.isEnabled!!) {
+            if (tvSave?.isEnabled == true) {
                 tvSave?.setTextColor(Color.parseColor("#007AFF"))
             } else {
                 tvSave?.setTextColor(Color.parseColor("#8E97AA"))
@@ -49,7 +49,7 @@ class Screen2Activity : AppCompatActivity() {
         edtContent?.addTextChangedListener {
             textContent = it.toString().trim()
             tvSave?.isEnabled = textTitle.isNotEmpty() && textContent.isNotEmpty()
-            if (tvSave?.isEnabled!!) {
+            if (tvSave?.isEnabled == true) {
                 tvSave?.setTextColor(Color.parseColor("#007AFF"))
             } else {
                 tvSave?.setTextColor(Color.parseColor("#8E97AA"))

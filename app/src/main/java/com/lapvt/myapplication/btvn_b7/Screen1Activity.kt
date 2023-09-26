@@ -32,11 +32,19 @@ class Screen1Activity : AppCompatActivity() {
                 if (type == TYPE_ADD) {
                     val message = result.data?.extras?.get("message") as? MessageData
                     message?.let { messageList.add(0, it) }
-                    adapter?.notifyItemInserted(0)
+                    adapter?.notifyDataSetChanged()
                 } else if (type == TYPE_EDIT) {
                     val message = result.data?.extras?.get("message") as? MessageData
-                    message?.let { messageList.set(it.id, message) }
-                    message?.let { adapter?.notifyItemChanged(it.id) }
+                    if (message != null) {
+                        for (item in messageList) {
+                            if (item.id == message.id) {
+                                item.title = message.title
+                                item.content = message.content
+                                break
+                            }
+                        }
+                        adapter?.notifyDataSetChanged()
+                    }
                 }
             }
         }

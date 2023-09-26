@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.lapvt.myapplication.btvn_b7.Screen1Activity;
+import com.lapvt.myapplication.btvn_b8.B8Screen1Activity;
 import com.lapvt.myapplication.buoi7.Buoi7Activity;
 import com.lapvt.myapplication.buoi8.Buoi8Activity;
 
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnCall;
     private Button btnCheckEvent;
     private Button btnBuoi8;
+    private Button btnBtvnB8;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnCall = findViewById(R.id.btnCall);
         btnCheckEvent = findViewById(R.id.btnCheckEvent);
         btnBuoi8 = findViewById(R.id.btnBuoi8);
+        btnBtvnB8 = findViewById(R.id.btnBtvnB8);
 
         btnBuoi7.setOnClickListener(view -> {
             Intent intent = new Intent(this, Buoi7Activity.class);
@@ -61,6 +64,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View view) {
                 super.onClick(view);
                 startActivity(new Intent(MainActivity.this, Buoi8Activity.class));
+            }
+        });
+
+        btnBtvnB8.setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onClick(View view) {
+                super.onClick(view);
+                startActivity(new Intent(MainActivity.this, B8Screen1Activity.class));
             }
         });
     }

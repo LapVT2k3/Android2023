@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".btvn_b8.B8Screen2Activity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarEdit"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFDF40">
+
+        <TextView
+            android:id="@+id/titleEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Chỉnh sửa sinh viên"
+            android:textSize="22sp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/edtName2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/border_shape"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="start"
+        android:inputType="text"
+        android:padding="12dp"
+        android:text="Vũ Trung Lập"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/edtAddress2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/border_shape"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="start"
+        android:inputType="text"
+        android:padding="12dp"
+        android:text="Triều Khúc, Thanh Xuân, Hà Nội"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/edtPhone2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/border_shape"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="start"
+        android:inputType="phone"
+        android:padding="12dp"
+        android:text="0353649148"
+        android:textSize="20sp" />
+
+    <TextView
+        android:background="@drawable/button_background"
+        android:id="@+id/btnSave2"
+        android:layout_marginTop="24dp"
+        android:layout_gravity="center"
+        android:text="Lưu"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:padding="6dp"
+        android:gravity="center"
+        android:fontFamily="@font/roboto_regular"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

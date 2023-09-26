@@ -37,4 +37,10 @@
         android:layout_height="wrap_content"
         android:text="Buổi 8" />
 
+    <Button
+        android:id="@+id/btnBtvnB8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BTVN buổi 8" />
+
 </LinearLayout>
