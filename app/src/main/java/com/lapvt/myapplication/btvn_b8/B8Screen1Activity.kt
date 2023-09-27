@@ -31,14 +31,19 @@ class B8Screen1Activity : AppCompatActivity() {
                 val type = result.data?.extras?.get(KEY)
                 if (type == TYPE_ADD) {
                     val user = result.data?.extras?.get("user_added") as? UserData
+                    val id = user?.let { userDao?.insert(it) }
+                    if (id != null) {
+                        user.id = id
+                    }
                     user?.let { userList.add(0, it) }
-                    adapter?.notifyDataSetChanged()
+                    adapter?.notifyItemInserted(0)
+                    rcvData?.scrollToPosition(0)
                 } else if (type == TYPE_EDIT) {
                     val user = result.data?.extras?.get("user_edited") as? UserData
+                    user?.id = result.data?.extras?.get("id") as Long
                     if (user != null) {
-                        for (i in 0..userList.size) {
+                        for (i in 0 until userList.size) {
                             if (userList[i].id == user.id) {
-                                val user1 = userList[i]
                                 userList[i] = user
                                 adapter?.notifyItemChanged(i)
                                 break
@@ -52,18 +57,32 @@ class B8Screen1Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_b8_screen1)
 
+        userDao = AppRoomDatabase.getDatabase(this)?.userDao()
         tvAddIcon = findViewById(R.id.tvAddIcon)
         tvAdd = findViewById(R.id.tvAdd)
+        userList = (userDao?.getAllUsers() as ArrayList<UserData>) ?: ArrayList()
         rcvData = findViewById(R.id.rcvData)
         rcvData?.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         adapter = UserAdapter(userList)
         rcvData?.adapter = adapter
-        userDao = AppRoomDatabase.getDatabase(this)?.userDao()
 
         adapter?.onItemClick = {
             val intent = Intent(this, B8Screen2Activity::class.java)
             intent.putExtra("user_edit", it)
+            intent.putExtra("id", it.id)
             startForResult.launch(intent)
+        }
+
+        adapter?.onBinClick = {
+            for (i in 0 until userList.size) {
+                val user1 = userList[i]
+                if (it.id == userList[i].id) {
+                    userList.removeAt(i)
+                    adapter?.notifyItemRemoved(i)
+                    userDao?.deleteById(it.id)
+                    break
+                }
+            }
         }
 
         tvAdd?.setOnClickListener {

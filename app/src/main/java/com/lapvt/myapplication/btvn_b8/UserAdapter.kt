@@ -12,6 +12,7 @@ class UserAdapter(private val userList: ArrayList<UserData>):
     RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
     var onItemClick: ((UserData) -> Unit)? = null
+    var onBinClick: ((UserData) -> Unit)? = null
     class UserViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         private val ivUser: ImageView = itemView.findViewById(R.id.ivUser)
         private val tvName: TextView = itemView.findViewById(R.id.tvName)
@@ -36,7 +37,7 @@ class UserAdapter(private val userList: ArrayList<UserData>):
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         holder.setData(userList[position])
         holder.ivBin.setOnClickListener {
-            onItemClick?.invoke(userList[position])
+            onBinClick?.invoke(userList[position])
         }
         holder.itemView.setOnClickListener {
             onItemClick?.invoke(userList[position])

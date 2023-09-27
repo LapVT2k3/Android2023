@@ -26,6 +26,7 @@ class B8Screen2Activity : AppCompatActivity() {
         edtPhone2 = findViewById(R.id.edtPhone2)
         btnSave2 = findViewById(R.id.btnSave2)
         val user = intent.extras?.get("user_edit") as? UserData
+        user?.id = intent.extras?.get("id") as Long
         var textName = user?.name ?: ""
         var textAddress = user?.address ?: ""
         var textPhone = user?.phone ?: ""
@@ -75,6 +76,7 @@ class B8Screen2Activity : AppCompatActivity() {
             user?.phone = textPhone
             val intent = Intent()
             intent.putExtra("user_edited", user)
+            intent.putExtra("id", user?.id)
             intent.putExtra(B8Screen1Activity.KEY, B8Screen1Activity.TYPE_EDIT)
             setResult(RESULT_OK, intent)
             finish()
