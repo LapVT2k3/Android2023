@@ -2,12 +2,11 @@ package com.lapvt.myapplication.btvn_b8
 
 import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.result.ActivityResult
-import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lapvt.myapplication.R
@@ -37,6 +36,7 @@ class B8Screen1Activity : AppCompatActivity() {
                     }
                     user?.let { userList.add(0, it) }
                     adapter?.notifyItemInserted(0)
+                    adapter?.notifyItemRangeChanged(0, userList.size)
                     rcvData?.scrollToPosition(0)
                 } else if (type == TYPE_EDIT) {
                     val user = result.data?.extras?.get("user_edited") as? UserData
@@ -60,7 +60,8 @@ class B8Screen1Activity : AppCompatActivity() {
         userDao = AppRoomDatabase.getDatabase(this)?.userDao()
         tvAddIcon = findViewById(R.id.tvAddIcon)
         tvAdd = findViewById(R.id.tvAdd)
-        userList = (userDao?.getAllUsers() as ArrayList<UserData>) ?: ArrayList()
+        userList = (userDao?.getAllUsers() as ArrayList<UserData>)
+        userList.reverse()
         rcvData = findViewById(R.id.rcvData)
         rcvData?.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         adapter = UserAdapter(userList)
@@ -75,10 +76,10 @@ class B8Screen1Activity : AppCompatActivity() {
 
         adapter?.onBinClick = {
             for (i in 0 until userList.size) {
-                val user1 = userList[i]
                 if (it.id == userList[i].id) {
                     userList.removeAt(i)
                     adapter?.notifyItemRemoved(i)
+                    adapter?.notifyItemRangeChanged(i, userList.size - i)
                     userDao?.deleteById(it.id)
                     break
                 }
